@@ -1,4 +1,4 @@
-" hakirot /hakirot .vimrc
+" /hakirot .vimrc
 
 " Custom Config File for the only editor I ever learned.
 "
@@ -79,18 +79,16 @@ set autoindent
 set incsearch
 set hls
 
-" While I understand not wanting a swp file, I still open duplicates sometimes
-" set noswapfile
-
-" well this make taking notes easier -_-, formatter cuts lines less than 110 long
-nnoremap ,f 0111lbi<Enter><esc>$
-
+" Move all temporary files to temporary folder
 set backupdir=~/temp/
 set directory=~/temp/
 set undodir=~/temp/
 
+" Line format helpers
+nnoremap ,f 0111lbi<Enter><esc>$
+nnoremap ,d 0i<BS><Space><esc> 
+
 " - - - - - - - - - SNIPPITS - - - - - - - - - 
 " extract C code skeleton for speedier writes
-nnoremap ,initC :-1read /home/hakirot/Documents/snippits/initc.c<Enter>15ji<Tab>
-
+nnoremap ,initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>15ji<Tab>
 nnoremap ,usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
