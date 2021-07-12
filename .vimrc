@@ -90,5 +90,5 @@ nnoremap ,d 0i<BS><Space><esc>
 
 " - - - - - - - - - SNIPPITS - - - - - - - - - 
 " extract C code skeleton for speedier writes
-nnoremap ,initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>15ji<Tab>
+nnoremap ,initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>ggA
 nnoremap ,usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l

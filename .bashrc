@@ -142,3 +142,6 @@ export PS1="\e[35;40m\]\u \W\e[m\] $ "
 
 # custom access to windows clipboard through XLaunch
 export DISPLAY=localhost:0.0
+
+# Start my initializer script
+~/.init

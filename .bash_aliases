@@ -1,8 +1,12 @@
+# Navigation
 alias omgwin='cd /mnt/c/users/omgwin/desktop/'
 alias coursework='cd /mnt/c/users/omgwin/desktop/coursework'
 alias tlpi='cd /mnt/c/users/omgwin/desktop/coursework/TheLinuxProgrammingInterface/'
+alias notes='cd ~/Documents/notes'
+alias finance='cd ~/Documents/Finance'
 
 alias tmux='tmux -2'
+alias tmuxxx='tmux kill-session -t 0'
 
 alias c='clear'
 
