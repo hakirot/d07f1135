@@ -4,7 +4,9 @@ alias coursework='cd /mnt/c/users/omgwin/desktop/coursework'
 alias tlpi='cd /mnt/c/users/omgwin/desktop/coursework/TheLinuxProgrammingInterface/'
 alias notes='cd ~/Documents/notes'
 
+# Tmux color option
 alias tmux='tmux -2'
+# Kill all tmux
 alias tmuxxx='tmux kill-session -t 0'
 
 alias c='clear'
@@ -14,10 +16,11 @@ alias python='python3.9'
 # alternate vim binary for access to windows clipboard, related cmd in .bashrc
 alias vim='vim.gtk3'
 
+# C code shorthands
 alias out='./a.out'
 alias rmout='rm a.out'
 
-alias backupConfigs='~/BackupConfigs/importConf.py'
+alias backupConfs='~/BackupConfigs/importConf.py'
 
 function apt-updater {
     sudo apt-get update &&
@@ -33,4 +36,3 @@ function gitsend {
     cmd="git push https://hakirot:${value}@github.com/hakirot/site.git"
     eval "$cmd"
 }
-
