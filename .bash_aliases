@@ -17,6 +17,8 @@ alias vim='vim.gtk3'
 alias out='./a.out'
 alias rmout='rm a.out'
 
+alias backupConfigs='~/BackupConfigs/importConfs.py'
+
 function apt-updater {
     sudo apt-get update &&
     sudo apt-get dist-upgrade -Vy &&
