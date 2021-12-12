@@ -32,12 +32,13 @@ obj.close()
 
 if len(written) > 0:
     for entry in written:
-        print("\033[30mCopied " + entry + " to ~/BackupConfigs\033[m")
+        print("\033[32mCopied " + entry + " to ~/BackupConfigs\033[m")
     push = input("Push to Github? Y/y\n")
     if push == 'Y' or push == 'y':
         print('pushing...')
+        commitMsg = input('Enter Commit Msg: ')
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         cwd = os.path.join(os.getcwd(), "gitConfs.sh")
-        os.system('{} {}'.format('/bin/sh', cwd))
+        os.system('{} {} '.format('/bin/sh', cwd) + commitMsg)
         print('Done!')
