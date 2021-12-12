@@ -28,14 +28,16 @@ for entry in obj:
             os.system(rmCmd)
             os.system(cpCmd)
             written.append(entry.name)
+obj.close()
+
 if len(written) > 0:
     for entry in written:
         print("\033[30mCopied " + entry + " to ~/BackupConfigs\033[m")
     push = input("Push to Github? Y/y\n")
     if push == 'Y' or push == 'y':
-        print('pushing')
+        print('pushing...')
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         cwd = os.path.join(os.getcwd(), "gitConfs.sh")
         os.system('{} {}'.format('/bin/sh', cwd))
-obj.close()
+        print('Done!')
