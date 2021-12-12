@@ -1,9 +1,7 @@
 " /hakirot .vimrc
 
-" Custom Config File for the only editor I ever learned.
-"
-" This Config file is copied straight from the Windows-side of this machine,
-" no notes included for settings imported outside WSL.
+" Custom Config File for the only editor I ever really wanted to learn.
+
 
 set nocompatible	
 syntax enable
@@ -16,20 +14,16 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Custom colorscheme currently not in use
-Plugin 'lifepillar/vim-solarized8'
-
+":Git {git commands}    git log looks great in here
 Plugin 'tpope/vim-fugitive'
 
+" Fuzzy file explorer: \t   C-n / C-p   C-t or C-c
 Plugin 'git://git.wincent.com/command-t.git'
 
-Plugin 'file:///home/gmarik/path/to/plugin'
-
+" https://github.com/rstacruz/sparkup
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-Plugin 'rust-lang/rust.vim'
-
-"Currently used awesome colorscheme
+" Yes.
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
@@ -37,13 +31,14 @@ call vundle#end()
 " Colorschemes
 
 " gruvbox init
-autocmd vimenter * ++nested colorscheme gruvbox
+"set termguicolors
+let g:gruvbox_contrast_dark = 'medium'
+colorscheme gruvbox
 set background=dark
 
-" ---- end colorschemes
-
+" color column
 set colorcolumn=110
-highlight ColorColumn ctermbg=black
+"highlight ColorColumn ctermbg=black
 
 set number
 set relativenumber
@@ -66,7 +61,7 @@ set belloff=all
 set path +=.,**
 set wildmenu
 
-" This resolves the error causing vim to start in REPLACE mode 
+" Simple bug resolve keeps vim from starting in REPLACE mode
 set t_u7=
 
 " Force backspace to behave like most programs, currently commented out to use
@@ -78,6 +73,11 @@ set autoindent
 " Apparently not default
 set incsearch
 set hls
+" Change the highlight search colors
+highlight Search ctermfg=magenta
+highlight Search ctermbg=grey
+highlight IncSearch ctermfg=red
+highlight IncSearch ctermbg=grey
 
 " Move all temporary files to temporary folder
 set backupdir=~/temp/
@@ -87,8 +87,17 @@ set undodir=~/temp/
 " Line format helpers
 nnoremap ,f 0111lbi<Enter><esc>$
 nnoremap ,d 0i<BS><Space><esc> 
+nnoremap ,% 0I<%<esc>A<Space>%><esc>0j
+
+" Anything yanked goes into the windows clipboard :D
+autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
+
+" Enable sparkup in .ejs files
+autocmd FileType javascript.ejs runtime! ftplugin/html/sparkup.vim
 
 " - - - - - - - - - SNIPPITS - - - - - - - - - 
 " extract C code skeleton for speedier writes
 nnoremap ,initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>ggA
 nnoremap ,usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
+
+nnoremap ,html :-1read /home/hakirot/Documents/snippits/skeleton.html<Enter>4jf>a

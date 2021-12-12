@@ -2,7 +2,7 @@
 
 cd ~
 
-session_name="sesh"
+session_name="0"
 
 # 1. First you check if a tmux session exists with a given name.
 tmux has-session -t=$session_name 2> /dev/null
