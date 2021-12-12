@@ -1,3 +1,4 @@
+cd "$(dirname "$0")"
 git add -A
 str="'$*'"
 gitCmd="git commit -m ${str}"
