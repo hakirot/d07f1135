@@ -34,6 +34,8 @@ if len(written) > 0:
     push = input("Push to Github? Y/y\n")
     if push == 'Y' or push == 'y':
         print('pushing')
+
+        # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         cwd = os.path.join(os.getcwd(), "gitConfs.sh")
         os.system('{} {}'.format('/bin/sh', cwd))
 obj.close()
