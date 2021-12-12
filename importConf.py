@@ -41,4 +41,4 @@ if len(written) > 0:
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         cwd = os.path.join(os.getcwd(), "gitConfs.sh")
         os.system('{} {} '.format('/bin/sh', cwd) + commitMsg)
-        print('Done!')
+        print('\033[32Done!\033[m')
