@@ -34,6 +34,6 @@ if len(written) > 0:
     push = input("Push to Github? Y/y\n")
     if push == 'Y' or push == 'y':
         print('pushing')
-        os.system('gitConfs.sh')
+        os.system('sudo backupConfs')
 
 obj.close()
