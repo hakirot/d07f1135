@@ -1,5 +1,5 @@
 git add -A
-gitCmd="git commit -m \"$2\""
+gitCmd="git commit -m \"$1\""
 #git commit -m "Updated."
 eval "$gitCmd"
 value=`cat ~/Documents/notes/git.txt`
