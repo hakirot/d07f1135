@@ -28,12 +28,6 @@ call vundle#end()
 
 " Colorschemes
 
-" Change the highlight search colors
-highlight Search ctermfg=magenta
-highlight Search ctermbg=grey
-highlight IncSearch ctermfg=red
-highlight IncSearch ctermbg=grey
-
 " Change tab bar colors
 highlight TabLineFill ctermfg=red ctermbg=red
 "highlight TabLine ctermfg=red ctermbg=red
@@ -48,6 +42,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
+"
+" Change the highlight search colors
+highlight Search ctermfg=magenta guifg=#8f3f71
+highlight Search ctermbg=grey guibg=#282828
+highlight IncSearch ctermfg=red guifg=#9d0006
+highlight IncSearch ctermbg=grey guibg=#ebdbb2
 
 " color column
 set colorcolumn=110
