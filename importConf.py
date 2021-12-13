@@ -41,7 +41,9 @@ if len(written) > 0:
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         gitScript = backupsDir + "gitConfs.sh"
+        print('\033[34m')
         os.system('{} {} '.format('/bin/sh', gitScript) + commitMsg)
+        print('\033[m')
 
         print('\033[32mDone!\033[m')
 else:
