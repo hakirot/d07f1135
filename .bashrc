@@ -152,7 +152,7 @@ fi
 #---------------------------------- SANSANTAS CUSTOMS ---------------------------------
 # clean custom bash prompt
 #export PS1="\e[35;40m\] \W\e[m\] $ "
-export PS1="\e[0;33m \W\e[m \e[0;30m$\e[m "
+export PS1="\e[1;33m \W\e[m \e[0;37m$\e[m "
 
 # custom access to windows clipboard through XLaunch
 export DISPLAY=localhost:0.0
@@ -165,7 +165,7 @@ source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # This is a chunky boi, slows terminal use; bad! Comment out when NOT USING NODE!!
 export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #export COLORTERM=truecolor
