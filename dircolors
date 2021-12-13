@@ -118,7 +118,7 @@ TERM xterm-termite
 NORMAL 00;38;5;250 # no color code at all
 FILE   00;38;5;223 # regular file: use no color at all
 RESET  00;38;5;172 # reset to "normal" color
-DIR    00;38;5;166 # directory
+DIR    0;34        # directory / Blue
 LINK   target      # symbolic link. (If you set this to 'target' instead of a
                    # numerical value, the color is as for the file pointed to.)
 
@@ -138,7 +138,7 @@ STICKY                38;5;208;48;5;243 # dir with the sticky bit set (+t) and n
 
 # This is for files with execute permission:
 #EXEC  01;30;32
-EXEC 0;31
+EXEC 1;35
 
 # Crufty and ignorable files
 .bak   38;5;246
@@ -253,25 +253,25 @@ EXEC 0;31
 .spx  01;33
 .xspf 01;33
 
-# documents
-.doc   38;5;109
-.docx  38;5;109
-.html  38;5;109
-.js    38;5;109
-.json  38;5;109
-.md    38;5;109
-.neon  38;5;109
-.odp   38;5;109
-.ods   38;5;109
-.odt   38;5;109
-.pdf   38;5;109
-.php   38;5;109
-.phtml 38;5;109
-.ppt   38;5;109
-.pptx  38;5;109
-.tex   38;5;109
-.txt   38;5;109
-.xls   38;5;109
-.xlsx  38;5;109
-.xml   38;5;109
-
+# documents / no color
+.doc   00;38;5;250
+.docx  00;38;5;250
+.html  00;38;5;250
+.js    00;38;5;250
+.json  00;38;5;250
+.md    00;38;5;250
+.neon  00;38;5;250
+.odp   00;38;5;250
+.ods   00;38;5;250
+.odt   00;38;5;250
+.pdf   00;38;5;250
+.php   00;38;5;250
+.phtml 00;38;5;250
+.ppt   00;38;5;250
+.pptx  00;38;5;250
+.tex   00;38;5;250
+.txt   00;38;5;250
+.xls   00;38;5;250
+.xlsx  00;38;5;250
+.xml   00;38;5;250
+.css   00;38;5;250
