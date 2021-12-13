@@ -35,13 +35,13 @@ if len(written) > 0:
         print("\033[32mCopied " + entry + " to ~/BackupConfigs\033[m")
     push = input("Push to Github? [Y/y]\n")
     if push == 'Y' or push == 'y':
+        print('\033[34m')
         print('pushing...')
         commitMsg = "Iterations"
         #commitMsg = input('Enter Commit Msg: ')
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         gitScript = backupsDir + "gitConfs.sh"
-        print('\033[34m')
         os.system('{} {} '.format('/bin/sh', gitScript) + commitMsg)
         print('\033[m')
 
