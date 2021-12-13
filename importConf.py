@@ -7,11 +7,10 @@ names = []
 written = []
 homeDir = '/home/hakirot/'
 backupsDir = '/home/hakirot/BackupConfigs/'
-check = 0
+
 backups = os.scandir(backupsDir)
 for entry in backups:
     names.append(entry.name)
-#print(names)
 
 obj = os.scandir(homeDir)
 for entry in obj:
@@ -37,11 +36,12 @@ if len(written) > 0:
     push = input("Push to Github? [Y/y]\n")
     if push == 'Y' or push == 'y':
         print('pushing...')
-        commitMsg = "iterations"
+        commitMsg = "Iterations"
         #commitMsg = input('Enter Commit Msg: ')
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         gitScript = backupsDir + "gitConfs.sh"
         cwd = os.path.join(os.getcwd(), gitScript)
         os.system('{} {} '.format('/bin/sh', cwd) + commitMsg)
+
         print('\033[32mDone!\033[m')
