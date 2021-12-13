@@ -44,3 +44,5 @@ if len(written) > 0:
         os.system('{} {} '.format('/bin/sh', gitScript) + commitMsg)
 
         print('\033[32mDone!\033[m')
+else:
+    print('\033[35mFiles are up to date. None Copied.\033[m')
