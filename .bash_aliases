@@ -20,10 +20,13 @@ alias vim='vim.gtk3'
 alias out='./a.out'
 alias rmout='rm a.out'
 
-alias backupConfs='~/BackupConfigs/importConf.py'
+# Config backup shellscripts
+alias backupConfs='~/BackupConfigs/getConfs.py'
 
 alias gstat='git status'
 alias gac='git add -A; git commit -m'
+
+alias gruvConf='cmd.exe /C start C:\\Users\\omgwin\\AppData\\Roaming\\Hyper\\.hyper_plugins\\node_modules\\hyper-gruvbox\\index.js'
 
 function apt-updater {
     sudo apt-get update &&

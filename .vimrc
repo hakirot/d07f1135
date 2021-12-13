@@ -1,7 +1,5 @@
 " /hakirot .vimrc
-
 " Custom Config File for the only editor I ever really wanted to learn.
-
 
 set nocompatible	
 syntax enable
@@ -30,15 +28,30 @@ call vundle#end()
 
 " Colorschemes
 
-" gruvbox init
-"set termguicolors
-let g:gruvbox_contrast_dark = 'medium'
+" Change the highlight search colors
+highlight Search ctermfg=magenta
+highlight Search ctermbg=grey
+highlight IncSearch ctermfg=red
+highlight IncSearch ctermbg=grey
+
+" Change tab bar colors
+highlight TabLineFill ctermfg=red ctermbg=red
+"highlight TabLine ctermfg=red ctermbg=red
+highlight TabLineSel ctermfg=red ctermbg=red
+
+" TRUE COLOR
+set termguicolors
+" Error Fix: no language syntax when inside tmux
+" https://vi.stackexchange.com/questions/10708/no-syntax-highlighting-in-tmux
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
 " color column
 set colorcolumn=110
-"highlight ColorColumn ctermbg=black
+highlight ColorColumn ctermbg=black
 
 set number
 set relativenumber
@@ -73,11 +86,7 @@ set autoindent
 " Apparently not default
 set incsearch
 set hls
-" Change the highlight search colors
-highlight Search ctermfg=magenta
-highlight Search ctermbg=grey
-highlight IncSearch ctermfg=red
-highlight IncSearch ctermbg=grey
+
 
 " Move all temporary files to temporary folder
 set backupdir=~/temp/

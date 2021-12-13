@@ -138,7 +138,7 @@ STICKY                38;5;208;48;5;243 # dir with the sticky bit set (+t) and n
 
 # This is for files with execute permission:
 #EXEC  01;30;32
-EXEC 1;35
+EXEC 0;35
 
 # Crufty and ignorable files
 .bak   38;5;246

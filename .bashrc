@@ -157,16 +157,15 @@ export PS1="\e[0;33m \W\e[m \e[0;30m$\e[m "
 # custom access to windows clipboard through XLaunch
 export DISPLAY=localhost:0.0
 
-# Start the initializer script
+# Start the tmux initializer script
 ~/.init
 
-# Groovy Colors!
+# Error Fix: Colors slightly off [Tmux 256 color]
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # This is a chunky boi, slows terminal use; bad! Comment out when NOT USING NODE!!
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# dircolors
-eval `dircolors ~/dircolors`
+#export COLORTERM=truecolor

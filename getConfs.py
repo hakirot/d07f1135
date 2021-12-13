@@ -33,9 +33,10 @@ obj.close()
 if len(written) > 0:
     for entry in written:
         print("\033[32mCopied " + entry + " to ~/BackupConfigs\033[m")
-    push = input("Push to Github? [Y/y]\n")
+    push = input("\033[35mPush to Github? [Y/y]\033[m\n")
     if push == 'Y' or push == 'y':
         print('\033[34m')
+
         print('pushing...')
         commitMsg = "Iterations"
         #commitMsg = input('Enter Commit Msg: ')
