@@ -22,6 +22,9 @@ alias rmout='rm a.out'
 
 alias backupConfs='~/BackupConfigs/importConf.py'
 
+alias gstat='git status'
+alias gac='git add -A; git commit -m'
+
 function apt-updater {
     sudo apt-get update &&
     sudo apt-get dist-upgrade -Vy &&
