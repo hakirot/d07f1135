@@ -28,12 +28,7 @@ call vundle#end()
 
 " Colorschemes
 
-" Change tab bar colors
-highlight TabLineFill ctermfg=red ctermbg=red
-"highlight TabLine ctermfg=red ctermbg=red
-highlight TabLineSel ctermfg=red ctermbg=red
-
-" TRUE COLOR
+" TRUE COLOR - Must come before vim highlights
 set termguicolors
 " Error Fix: no language syntax when inside tmux
 " https://vi.stackexchange.com/questions/10708/no-syntax-highlighting-in-tmux
@@ -42,16 +37,23 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
-"
+
+" Change tab bar colors
+highlight TabLineFill ctermfg=none ctermbg=none guifg=#d79921 guibg=#1d2021
+highlight TabLine ctermfg=none ctermbg=none guifg=#d65d0e guibg=#1d2021
+highlight TabLineSel ctermfg=none ctermbg=none guifg=#fabd2f guibg=#1d2021
+
 " Change the highlight search colors
 highlight Search ctermfg=magenta guifg=#8f3f71
 highlight Search ctermbg=grey guibg=#282828
 highlight IncSearch ctermfg=red guifg=#9d0006
 highlight IncSearch ctermbg=grey guibg=#ebdbb2
+highlight WarningMsg guifg=#000000 guibg=#000000
+" highlight Comment guifg=#
 
 " color column
 set colorcolumn=110
-highlight ColorColumn ctermbg=black
+highlight ColorColumn ctermbg=black guibg=#282828
 
 set number
 set relativenumber
