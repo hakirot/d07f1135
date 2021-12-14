@@ -44,12 +44,10 @@ highlight TabLine ctermfg=none ctermbg=none guifg=#d65d0e guibg=#1d2021
 highlight TabLineSel ctermfg=none ctermbg=none guifg=#fabd2f guibg=#1d2021
 
 " Change the highlight search colors
-highlight Search ctermfg=magenta guifg=#8f3f71
-highlight Search ctermbg=grey guibg=#282828
+highlight Search ctermfg=magenta guifg=#3c3836
+highlight Search ctermbg=grey guibg=#d79921
 highlight IncSearch ctermfg=red guifg=#9d0006
 highlight IncSearch ctermbg=grey guibg=#ebdbb2
-highlight WarningMsg guifg=#000000 guibg=#000000
-" highlight Comment guifg=#
 
 " color column
 set colorcolumn=110
