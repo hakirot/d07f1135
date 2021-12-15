@@ -43,3 +43,23 @@ function gitsend {
     eval "$cmd"
     printf '\033[0m'
 }
+
+function indySend {
+    printf '\033[0;34m'
+    value=`cat ~/Documents/notes/git.txt`
+    cmd="git push https://hakirot:${value}@github.com/hakirot/IndyJones.git"
+    eval "$cmd"
+    printf '\033[0m'
+}
+
+function makeL {
+    make clean
+    make
+    clear
+    ./TheGame
+}
+
+function makeW {
+    make clean
+    make
+}
