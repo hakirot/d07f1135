@@ -1,5 +1,6 @@
 # Run git commands from script folder, not folder where cmd was called
 cd "$(dirname "$0")"
+# Add all changes files staging area
 git add -A
 # Use all arguments for git commit msg
 str="'$*'"

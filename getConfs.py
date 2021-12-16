@@ -37,9 +37,9 @@ if len(written) > 0:
     if push == 'Y' or push == 'y':
         print('\033[34m')
 
+        commitMsg = input('Enter Commit Msg: ')
         print('pushing...')
-        commitMsg = "Iterations"
-        #commitMsg = input('Enter Commit Msg: ')
+        #commitMsg = "Iterations"
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         gitScript = backupsDir + "gitConfs.sh"
