@@ -106,7 +106,7 @@ nnoremap ,% 0I<%<esc>A<Space>%><esc>0j
 autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
 
 " Enable sparkup in .ejs files
-autocmd FileType javascript.ejs runtime! ftplugin/html/sparkup.vim
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " - - - - - - - - - SNIPPITS - - - - - - - - - 
 " extract C code skeleton for speedier writes
