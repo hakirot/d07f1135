@@ -44,8 +44,8 @@ set background=dark
 
 " Change tab bar colors
 highlight TabLineFill ctermfg=none ctermbg=none guifg=#d79921 guibg=#1d2021
-highlight TabLine ctermfg=none ctermbg=none guifg=#d65d0e guibg=#1d2021
-highlight TabLineSel ctermfg=none ctermbg=none guifg=#fabd2f guibg=#d65d0e
+highlight TabLine ctermfg=none ctermbg=none guifg=#458588 guibg=#1d2021
+highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#458588
 
 " Change the highlight search colors
 highlight Search ctermfg=magenta guifg=#3c3836
