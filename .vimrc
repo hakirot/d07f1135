@@ -45,7 +45,7 @@ set background=dark
 " Change tab bar colors
 highlight TabLineFill ctermfg=none ctermbg=none guifg=#d79921 guibg=#1d2021
 highlight TabLine ctermfg=none ctermbg=none guifg=#d65d0e guibg=#1d2021
-highlight TabLineSel ctermfg=none ctermbg=none guifg=#fabd2f guibg=#1d2021
+highlight TabLineSel ctermfg=none ctermbg=none guifg=#fabd2f guibg=#d65d0e
 
 " Change the highlight search colors
 highlight Search ctermfg=magenta guifg=#3c3836
@@ -112,5 +112,4 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " extract C code skeleton for speedier writes
 nnoremap ,initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>ggA
 nnoremap ,usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
-
 nnoremap ,html :-1read /home/hakirot/Documents/snippits/skeleton.html<Enter>4jf>a
