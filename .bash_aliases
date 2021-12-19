@@ -36,12 +36,8 @@ function apt-updater {
 }
 
 # gitties
-function gac {
-    printf '\033[0;34m'
-    git add -A; 
-    git commit -m
-    printf '\033[0m'
-}
+alias gac='git add -A; git commit -m'
+
 
 function gitsend {
     printf '\033[0;34m'
