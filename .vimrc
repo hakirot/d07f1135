@@ -91,7 +91,6 @@ set autoindent
 set incsearch
 set hls
 
-
 " Move all temporary files to temporary folder
 set backupdir=~/temp/
 set directory=~/temp/
@@ -100,8 +99,8 @@ set undodir=~/temp/
 " Line format helpers
 nnoremap ,f 0111lbi<Enter><esc>$
 nnoremap ,d 0i<BS><Space><esc> 
-nnoremap ejs% 0I<%<esc>A<Space>%><esc>0j
-nnoremap ejs= li<%=<Space>%><esc>bhi<Space>
+nnoremap ,ejs% 0I<%<esc>A<Space>%><esc>0j
+nnoremap ,ejs= li<%=<Space>%><esc>bhi<Space>
 
 " Comment and uncomment, just change // and xx to specific language character
 let @c="0i//\<esc>j"
