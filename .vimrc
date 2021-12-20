@@ -100,7 +100,12 @@ set undodir=~/temp/
 " Line format helpers
 nnoremap ,f 0111lbi<Enter><esc>$
 nnoremap ,d 0i<BS><Space><esc> 
-nnoremap ,% 0I<%<esc>A<Space>%><esc>0j
+nnoremap ejs% 0I<%<esc>A<Space>%><esc>0j
+nnoremap ejs= li<%=<Space>%><esc>bhi<Space>
+
+" Comment and uncomment, just change // and xx to specific language character
+let @c="0i//\<esc>j"
+let @u="0xx\<esc>j"
 
 " Anything yanked goes into the windows clipboard :D
 autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif

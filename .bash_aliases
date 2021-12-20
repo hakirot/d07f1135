@@ -38,7 +38,6 @@ function apt-updater {
 # gitties
 alias gac='git add -A; git commit -m'
 
-
 function gitsend {
     printf '\033[0;34m'
     value=`cat ~/Documents/notes/git.txt`
