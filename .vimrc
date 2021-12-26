@@ -1,4 +1,4 @@
-" /hakirot .vimrc
+" hakirot .vimrc
 " Custom Config File for the only editor I ever really wanted to learn.
 
 set nocompatible	
@@ -33,17 +33,19 @@ call vundle#end()
 
 " TRUE COLOR - Must come before vim highlights
 set termguicolors
+
 " Error Fix: no language syntax when inside tmux
 " https://vi.stackexchange.com/questions/10708/no-syntax-highlighting-in-tmux
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 " Terminal/Tmux/Vim all gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
 " Change tab bar colors
-highlight TabLineFill ctermfg=none ctermbg=none guifg=#d79921 guibg=#1d2021
+
 highlight TabLine ctermfg=none ctermbg=none guifg=#458588 guibg=#1d2021
 highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#458588
 
@@ -67,6 +69,7 @@ set smartindent
 set shiftwidth=4
 set expandtab
 
+" Auto-Bracketing
 inoremap {<cr> {<cr>}<c-o><s-o>
 inoremap [<cr> [<cr>]<c-o><s-o>
 inoremap (<cr> (<cr>)<c-o><s-o>
@@ -99,21 +102,24 @@ set undodir=~/temp/
 " Line format helpers
 nnoremap ,f 0111lbi<Enter><esc>$
 nnoremap ,d 0i<BS><Space><esc> 
+
+" EJS macros: Insert
 nnoremap ,ejs% 0I<%<esc>A<Space>%><esc>0j
 nnoremap ,ejs= li<%=<Space>%><esc>bhi<Space>
 
-" Comment and uncomment, just change // and xx to specific language character
+" Comment and uncomment; Javascript 
 let @c="0i//\<esc>j"
 let @u="0xx\<esc>j"
 
 " Anything yanked goes into the windows clipboard :D
 autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
 
-" Enable sparkup in .ejs files
+" Enable Sparkup in .ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
 
-" - - - - - - - - - SNIPPITS - - - - - - - - - 
+" - - - - - - - - - SNIPPITS - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " extract C code skeleton for speedier writes
 nnoremap ,initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>ggA
 nnoremap ,usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
 nnoremap ,html :-1read /home/hakirot/Documents/snippits/skeleton.html<Enter>4jf>a
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
