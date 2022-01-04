@@ -45,8 +45,8 @@ colorscheme gruvbox
 set background=dark
 
 " Change tab bar colors
-
 highlight TabLine ctermfg=none ctermbg=none guifg=#458588 guibg=#1d2021
+highlight TabLineFill ctermfg=none ctermbg=none guifg=#1d2021 guibg=#1d2021
 highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#458588
 
 " Change the highlight search colors
@@ -101,11 +101,11 @@ set undodir=~/temp/
 
 " Line format helpers
 nnoremap ,f 0111lbi<Enter><esc>$
-nnoremap ,d 0i<BS><Space><esc> 
+nnoremap ,d 0i<BS><Space><esc>dw$
 
 " EJS macros: Insert
 nnoremap ,ejs% 0I<%<esc>A<Space>%><esc>0j
-nnoremap ,ejs= li<%=<Space>%><esc>bhi<Space>
+nnoremap ,ejs= a<%=<Space>%><esc>bhi<Space>
 
 " Comment and uncomment; Javascript 
 let @c="0i//\<esc>j"
