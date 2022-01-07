@@ -4,28 +4,33 @@ alias coursework='cd /mnt/c/users/omgwin/desktop/coursework'
 alias tlpi='cd /mnt/c/users/omgwin/desktop/coursework/TheLinuxProgrammingInterface/'
 alias notes='cd ~/Documents/notes'
 
-# Tmux color option
+# Tmux in full color
 alias tmux='tmux -2'
-# Kill all tmux
+
+# Kill tmux
 alias tmuxxx='tmux kill-session -t 0'
 
+# Gotta go fast
 alias c='clear'
 
+# Ensure usage of 3.9 binary
 alias python='python3.9'
 
-# alternate vim binary for access to windows clipboard, related cmd in .bashrc
+# Alternate vim binary for access to windows clipboard, related cmd in .bashrc
 alias vim='vim.gtk3'
 
-# C code shorthands
+# C make shortcuts
 alias out='./a.out'
 alias rmout='rm a.out'
 
-# Config backup shellscripts
+# Backup configs
 alias backupConfs='~/BackupConfigs/getConfs.py'
 
-alias gstat='git status'
-
+# Access GruvBox Color Config for Hyper terminal
 alias gruvConf='cmd.exe /C start C:\\Users\\omgwin\\AppData\\Roaming\\Hyper\\.hyper_plugins\\node_modules\\hyper-gruvbox\\index.js'
+
+# Clean trees
+alias tree="tree -I node_modules -L 3"
 
 function apt-updater {
     sudo apt-get update &&
@@ -35,7 +40,8 @@ function apt-updater {
     sudo apt-get clean
 }
 
-# gitties
+# Gitties
+alias gstat='git status'
 alias gac='git add -A; git commit -m'
 
 function gitsend {

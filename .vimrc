@@ -55,7 +55,7 @@ highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#689d6a
 " Change the highlight search colors
 highlight Search ctermfg=magenta guifg=#8a1712
 highlight Search ctermbg=grey guibg=#ebdbb2
-highlight IncSearch ctermfg=red guifg=#cc241d
+highlight IncSearch ctermfg=red guifg=#8a1712
 highlight IncSearch ctermbg=grey guibg=#ebdbb2
 
 " color column
