@@ -45,14 +45,17 @@ colorscheme gruvbox
 set background=dark
 
 " Change tab bar colors
-highlight TabLine ctermfg=none ctermbg=none guifg=#458588 guibg=#1d2021
-highlight TabLineFill ctermfg=none ctermbg=none guifg=#1d2021 guibg=#1d2021
-highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#458588
 
+" fg=inactiveTabText  bg=
+highlight TabLine ctermfg=none ctermbg=none guifg=#689d6a guibg=#1d2021
+highlight TabLineFill ctermfg=none ctermbg=none guifg=#1d2021 guibg=#1d2021
+" fg=activeTabText  bg=
+highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#689d6a 
+"
 " Change the highlight search colors
-highlight Search ctermfg=magenta guifg=#3c3836
-highlight Search ctermbg=grey guibg=#d79921
-highlight IncSearch ctermfg=red guifg=#9d0006
+highlight Search ctermfg=magenta guifg=#8a1712
+highlight Search ctermbg=grey guibg=#ebdbb2
+highlight IncSearch ctermfg=red guifg=#cc241d
 highlight IncSearch ctermbg=grey guibg=#ebdbb2
 
 " color column
@@ -69,12 +72,12 @@ set smartindent
 set shiftwidth=4
 set expandtab
 
-" Auto-Bracketing
+" Auto-Bracket via remap function
 inoremap {<cr> {<cr>}<c-o><s-o>
 inoremap [<cr> [<cr>]<c-o><s-o>
 inoremap (<cr> (<cr>)<c-o><s-o>
 
-"Operate in silence
+" Please no
 set belloff=all
 
 " Commonly referenced useful setting that needs research for using files
@@ -85,16 +88,15 @@ set wildmenu
 set t_u7=
 
 " Force backspace to behave like most programs, currently commented out to use
-" vim as a more editor style, pressing less buttons.
+"   vim as a more editor style, pressing less buttons.
 " set backspace=indent,eol,start
-
 set autoindent
 
 " Apparently not default
 set incsearch
 set hls
 
-" Move all temporary files to temporary folder
+" Keep temp files in temporary folder
 set backupdir=~/temp/
 set directory=~/temp/
 set undodir=~/temp/
