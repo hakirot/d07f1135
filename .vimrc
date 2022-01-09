@@ -24,6 +24,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Yes.
 Plugin 'morhetz/gruvbox'
 
+Plugin 'ap/vim-css-color'
+
 " Not feeling it
 "Plugin 'vim-airline/vim-airline'
 
