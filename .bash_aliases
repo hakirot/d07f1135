@@ -30,7 +30,7 @@ alias backupConfs='~/BackupConfigs/getConfs.py'
 alias gruvConf='cmd.exe /C start C:\\Users\\omgwin\\AppData\\Roaming\\Hyper\\.hyper_plugins\\node_modules\\hyper-gruvbox\\index.js'
 
 # Clean trees
-alias tree="tree -I node_modules -L 3"
+alias tree="tree -I node_modules -L"
 
 function apt-updater {
     sudo apt-get update &&
