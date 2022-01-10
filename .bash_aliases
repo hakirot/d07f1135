@@ -26,11 +26,14 @@ alias rmout='rm a.out'
 # Backup configs
 alias backupConfs='~/BackupConfigs/getConfs.py'
 
+# Clean trees
+alias tree="tree -I node_modules -L 3"
+
+# Treek
+alias treek='~/Documents/github/Treek/treek.sh'
+
 # Access GruvBox Color Config for Hyper terminal
 alias gruvConf='cmd.exe /C start C:\\Users\\omgwin\\AppData\\Roaming\\Hyper\\.hyper_plugins\\node_modules\\hyper-gruvbox\\index.js'
-
-# Clean trees
-alias tree="tree -I node_modules -L"
 
 function apt-updater {
     sudo apt-get update &&
@@ -44,32 +47,16 @@ function apt-updater {
 alias gstat='git status'
 alias gac='git add -A; git commit -m'
 
-function gitsend {
-    printf '\033[0;34m'
-    value=`cat ~/Documents/notes/git.txt`
-    repo=`basename $(git rev-parse --show-toplevel)`
-    cmd="git push https://hakirot:${value}@github.com/hakirot/${repo}.git"
-    eval "$cmd"
-    printf '\033[0m'
-}
-
 function foo {
     repo=`basename $(git rev-parse --show-toplevel)`
     echo $repo
 }
 
-function lukassend {
+function gitsend {
     printf '\033[0;34m'
     value=`cat ~/Documents/notes/git.txt`
-    cmd="git push https://hakirot:${value}@github.com/hakirot/LukasAndFriends.git"
-    eval "$cmd"
-    printf '\033[0m'
-}
-
-function indySend {
-    printf '\033[0;34m'
-    value=`cat ~/Documents/notes/git.txt`
-    cmd="git push https://hakirot:${value}@github.com/hakirot/IndyJones.git"
+    repo=`basename $(git rev-parse --show-toplevel)`
+    cmd="git push https://hakirot:${value}@github.com/hakirot/${repo}.git"
     eval "$cmd"
     printf '\033[0m'
 }
