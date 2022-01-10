@@ -150,8 +150,8 @@ if ! shopt -oq posix; then
 fi
 
 #---------------------------------- SANSANTAS CUSTOMS ---------------------------------
+
 # clean custom bash prompt
-#export PS1="\e[35;40m\] \W\e[m\] $ "
 export PS1="\e[1;33m \W\e[m \e[0;37m$\e[m "
 
 # custom access to windows clipboard through XLaunch
@@ -169,4 +169,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+#export PATH="$PATH:$HOME/.rvm/bin"

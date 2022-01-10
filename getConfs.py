@@ -9,6 +9,7 @@ homeDir = '/home/hakirot/'
 backupsDir = '/home/hakirot/BackupConfigs/'
 
 backups = os.scandir(backupsDir)
+
 for entry in backups:
     names.append(entry.name)
 

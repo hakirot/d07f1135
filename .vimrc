@@ -24,6 +24,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Yes.
 Plugin 'morhetz/gruvbox'
 
+" Helpful, fast
 Plugin 'ap/vim-css-color'
 
 " Not feeling it
@@ -115,6 +116,7 @@ nnoremap ,ejs= a<%=<Space>%><esc>bhi<Space>
 " Comment and uncomment; Javascript 
 let @c="0i//\<esc>j"
 let @u="0xx\<esc>j"
+let @v="i/*\<esc>}i*/\<esc>"
 
 " Anything yanked goes into the windows clipboard :D
 autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
