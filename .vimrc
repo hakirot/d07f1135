@@ -68,6 +68,7 @@ highlight ColorColumn ctermbg=black guibg=#282828
 set number
 set relativenumber
 set nowrap
+set pastetoggle=<F2>
 
 set tabstop=4
 set softtabstop=4
