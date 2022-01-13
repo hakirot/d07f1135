@@ -108,7 +108,7 @@ set undodir=~/temp/
 
 " Line format helpers
 nnoremap ,f 0111lbi<Enter><esc>$
-nnoremap ,d 0i<BS><Space><esc>dw$
+nnoremap ,d 0i<BS><Space><esc>dwi<Space><esc>$
 
 " EJS macros: Insert
 nnoremap ,ejs% 0I<%<esc>A<Space>%><esc>0j
