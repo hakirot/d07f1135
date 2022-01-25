@@ -101,13 +101,16 @@ set autoindent
 set incsearch
 set hls
 
+" Stop typing 'tabnew' because it is annoying
+ca tn tabnew
+
 " Keep temp files in temporary folder
 set backupdir=~/temp/
 set directory=~/temp/
 set undodir=~/temp/
 
 " Line format helpers
-nnoremap ,f 0111lbi<Enter><esc>$
+nnoremap ,f 0111lbi<Enter><esc>$i
 nnoremap ,d 0i<BS><Space><esc>dwi<Space><esc>$
 
 " EJS macros: Insert
