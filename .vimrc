@@ -27,8 +27,8 @@ Plugin 'morhetz/gruvbox'
 " Helpful, fast
 Plugin 'ap/vim-css-color'
 
-" Not feeling it
-"Plugin 'vim-airline/vim-airline'
+" vim surround tool
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
