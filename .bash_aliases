@@ -41,6 +41,7 @@ alias tree="tree -I node_modules -L 3 --noreport"
 
 # Treek
 alias treek='~/Documents/github/Treek/treek.sh'
+alias treekedit='vim ~/Documents/github/Treek/treek.sh'
 
 # Access GruvBox Color Config for Hyper terminal
 alias gruvConf='cmd.exe /C start C:\\Users\\omgwin\\AppData\\Roaming\\Hyper\\.hyper_plugins\\node_modules\\hyper-gruvbox\\index.js'
