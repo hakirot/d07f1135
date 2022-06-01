@@ -163,7 +163,7 @@ export DISPLAY=localhost:0.0
 # Error Fix: Colors slightly off [Tmux 256 color]
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
-# This is a chunky boi, slows terminal use; bad! Comment out when NOT USING NODE!!
+# This is a chunky boi, slows terminal use; Comment out when not using node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
