@@ -20,8 +20,8 @@ alias tmux='tmux -2'
 # Kill Tmux
 alias tmuxxx='tmux kill-session -t 0'
 
-# Go Fast
-alias c='clear'
+# Go Fast (deprecated, use C^l)
+# alias c='clear'
 
 # Python 3.9
 alias python='python3.9'
@@ -36,8 +36,8 @@ alias rmout='rm a.out'
 # Backup configs
 alias backupConfs='~/BackupConfigs/getConfs.py'
 
-# Clean trees
-alias tree="tree -I node_modules -L 3 --noreport"
+# Clean trees (deprecated, use treek)
+#alias tree="tree -I node_modules -L 3 --noreport"
 
 # Treek
 alias treek='~/Documents/github/Treek/treek.sh'
