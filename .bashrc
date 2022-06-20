@@ -149,7 +149,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#---------------------------------- SANSANTAS CUSTOMS ---------------------------------
+#---------------------------------- CUSTOMS ---------------------------------
 
 # clean custom bash prompt
 export PS1="\e[1;33m \W\e[m \e[0;37m$\e[m "
@@ -161,7 +161,7 @@ export DISPLAY=localhost:0.0
 ~/.init
 
 # Error Fix: Colors slightly off [Tmux 256 color]
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+#source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # This is a chunky boi, slows terminal use; Comment out when not using node
 export NVM_DIR="$HOME/.nvm"
