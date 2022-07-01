@@ -106,6 +106,8 @@ ca tn tabnew
 ca fl Files
 "  and yeah
 ca vimrc $MYVIMRC
+" move tabs
+ca tm tabmove
 
 " Keep temp files in temporary folder
 set backupdir=~/temp/
