@@ -49,4 +49,4 @@ if len(written) > 0:
 
         print('\033[35mDone!\033[m')
 else:
-    print('\033[35mFiles are up to date. None Copied.\033[m')
+    print('\033[35mFiles are up to date.\033[m')
