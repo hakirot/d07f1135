@@ -11,8 +11,8 @@ gitCmd="git commit -m ${str}"
 # Run gitCmd as shellcode for ${str}
 eval "$gitCmd"
 
-# Read secure git token
-value=`cat ~/Documents/notes/git.txt`
+# Read token
+value=`cat ~/Git/token/token.txt`
 
 # Generate push command
 cmd="git push https://hakirot:${value}@github.com/hakirot/BackupConfigs.git"
