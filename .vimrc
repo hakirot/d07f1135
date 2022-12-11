@@ -41,21 +41,23 @@ colorscheme everforest
 
 " Change tab bar colors
 
-" fg=inactiveTabText  bg=
-highlight TabLine ctermfg=none ctermbg=none guifg=#689d6a guibg=#1d2021
-highlight TabLineFill ctermfg=none ctermbg=none guifg=#1d2021 guibg=#1d2021
-" fg=activeTabText  bg=
-highlight TabLineSel ctermfg=none ctermbg=none guifg=#1d2021 guibg=#689d6a 
+" fg=inactiveTabText
+" INACTIVE 
+highlight TabLine ctermfg=none ctermbg=none guifg=#e67e80 guibg=#2d353b
+" null / main bar background
+highlight TabLineFill ctermfg=none ctermbg=none guifg=#ffffff guibg=#2d353b
+" SELECTED tab color / text
+highlight TabLineSel ctermfg=none ctermbg=none guifg=#2d353b guibg=#e67e80
 "
 " Change the highlight search colors
-highlight Search ctermfg=magenta guifg=#8a1712
-highlight Search ctermbg=grey guibg=#ebdbb2
-highlight IncSearch ctermfg=red guifg=#8a1712
-highlight IncSearch ctermbg=grey guibg=#ebdbb2
+highlight Search ctermfg=magenta guifg=#d3c6aa
+highlight Search ctermbg=grey guibg=#543a48
+highlight IncSearch ctermfg=red guifg=#2d353b
+highlight IncSearch ctermbg=grey guibg=#e67e80
 
 " color column
 set colorcolumn=110
-highlight ColorColumn ctermbg=black guibg=#282828
+highlight ColorColumn ctermbg=black guibg=#343f44
 
 set number
 set relativenumber
