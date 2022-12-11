@@ -71,6 +71,19 @@ set smartcase
 set smartindent
 set shiftwidth=4
 set expandtab
+"
+" Force backspace to behave like most programs, currently commented out to use
+"   vim as a more editor style, pressing less buttons.
+" set backspace=indent,eol,start
+set autoindent
+
+" Apparently not default
+set incsearch
+set hls
+"
+" Commonly referenced useful setting that needs research for using files
+set path +=.,**
+set wildmenu
 
 " Auto-Bracket via remap function
 inoremap {<cr> {<cr>}<c-o><s-o>
@@ -80,21 +93,8 @@ inoremap (<cr> (<cr>)<c-o><s-o>
 " Please no
 set belloff=all
 
-" Commonly referenced useful setting that needs research for using files
-set path +=.,**
-set wildmenu
-
 " Simple bug resolve keeps vim from starting in REPLACE mode
 "set t_u7=
-
-" Force backspace to behave like most programs, currently commented out to use
-"   vim as a more editor style, pressing less buttons.
-" set backspace=indent,eol,start
-set autoindent
-
-" Apparently not default
-set incsearch
-set hls
 
 " Stop typing 'tabnew' because annoying
 ca tn tabnew
