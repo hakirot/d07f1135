@@ -13,7 +13,7 @@ call plug#begin()
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " Yes.
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 
 " Helpful, fast
 Plug 'ap/vim-css-color'
@@ -21,12 +21,8 @@ Plug 'ap/vim-css-color'
 " vim surround tool, instructions in vim notes
 Plug 'tpope/vim-surround'
 
-" Fast increment completion for web development
-" May require further configuration with tips from https://github.com/neoclide/coc.nvim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -35,15 +31,13 @@ call plug#end()
 " TRUE COLOR - Must come before vim highlights
 set termguicolors
 
-" Terminal/Tmux/Vim all gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
 set background=dark
+colorscheme everforest
 
 " Error Fix: no language syntax when inside tmux
 " https://vi.stackexchange.com/questions/10708/no-syntax-highlighting-in-tmux
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Change tab bar colors
 
@@ -89,7 +83,7 @@ set path +=.,**
 set wildmenu
 
 " Simple bug resolve keeps vim from starting in REPLACE mode
-set t_u7=
+"set t_u7=
 
 " Force backspace to behave like most programs, currently commented out to use
 "   vim as a more editor style, pressing less buttons.
@@ -122,24 +116,24 @@ let mapleader = " "
 " nnoremap <leader>d 0i<BS><Space><esc>dwi<Space><esc>$
 
 " EJS macros: Insert
-nnoremap <leader>ejs% 0I<%<esc>A<Space>%><esc>0j
-nnoremap <leader>ejs= a<%=<Space>%><esc>bhi<Space>
+"nnoremap <leader>ejs% 0I<%<esc>A<Space>%><esc>0j
+"nnoremap <leader>ejs= a<%=<Space>%><esc>bhi<Space>
 
 " Comment and uncomment; Javascript 
-let @c="0i//\<esc>j"
-let @u="0xx\<esc>j"
-let @v="i/*\<esc>}i*/\<esc>"
+"let @c="0i//\<esc>j"
+"let @u="0xx\<esc>j"
+"let @v="i/*\<esc>}i*/\<esc>"
 
 " Anything yanked goes into the windows clipboard :D
-autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
+"autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
 
 " Enable Sparkup in .ejs files
-au BufNewFile,BufRead *.ejs set filetype=html
+"au BufNewFile,BufRead *.ejs set filetype=html
 
 
 " - - - - - - - - - SNIPPITS - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " extract C code skeleton for speedier writes
-nnoremap <leader>initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>ggA
-nnoremap <leader>usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
-nnoremap <leader>html :-1read /home/hakirot/Documents/snippits/skeleton.html<Enter>4jf>a
+"nnoremap <leader>initc :-1read /home/hakirot/Documents/snippits/initc.c<Enter>ggA
+"nnoremap <leader>usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
+"nnoremap <leader>html :-1read /home/hakirot/Documents/snippits/skeleton.html<Enter>4jf>a
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
