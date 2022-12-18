@@ -71,6 +71,7 @@ set smartcase
 set smartindent
 set shiftwidth=4
 set expandtab
+set ignorecase
 "
 " Force backspace to behave like most programs, currently commented out to use
 "   vim as a more editor style, pressing less buttons.

@@ -12,3 +12,5 @@ PS1=' \u \W \$ '
 alias la='ls -a'
 alias ll='ls -l'
 alias l='ls -la'
+
+alias gitroot='cd $(git rev-parse --show-toplevel)'
