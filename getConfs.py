@@ -33,14 +33,13 @@ obj.close()
 
 if len(written) > 0:
     for entry in written:
-        print("\033[1;34mCopied " + entry + " to ~/BackupConfigs\033[m")
+        print("\033[1;34mCopied " + entry + " to " + backupsDir + "\033[m")
     push = input("\033[1;35mPush to Github? [Y/y]\033[m\n")
     if push == 'Y' or push == 'y':
 
         commitMsg = input('\033[1;35mEnter Commit Msg:\033[1;33m ')
         print('\033[1;35m')
         print('pushing...\033[1;34m')
-        #commitMsg = "Iterations"
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         gitScript = backupsDir + "gitConfs.sh"

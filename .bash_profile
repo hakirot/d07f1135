@@ -6,11 +6,7 @@
 
 alias ls='ls --color=auto'
 
-# old/new (fixed)
-#export PS1='\[\e[32m\]\u \[\e[37m\]\W \[\e[39m\]\$ \[\e[m\]'
 export PS1="\[\e[32m\][\[\e[31m\]\u \[\e[36m\]\w\[\e[32m\]]\[\e[32m\] $ \[\e[m\]"
-
-#$PATH=$PATH:~/.local/bin
 
 alias la='ls -a'
 alias ll='ls -l'
@@ -21,3 +17,4 @@ alias gstat='git status'
 
 alias notes='cd ~/Documents/notes'
 
+alias backupConfs='~/Git/BackupConfigs/getConfs.py'

@@ -1,4 +1,4 @@
-# Run git commands from script folder, not folder where cmd was called
+# Run git commands from script folder, not directory where the cmd was called
 cd "$(dirname "$0")"
 
 # Add all changes files staging area
@@ -12,7 +12,7 @@ gitCmd="git commit -m ${str}"
 eval "$gitCmd"
 
 # Read token
-value=`cat ~/Git/token/token.txt`
+value=`cat ~/Git/token/token`
 
 # Generate push command
 cmd="git push https://hakirot:${value}@github.com/hakirot/BackupConfigs.git"
