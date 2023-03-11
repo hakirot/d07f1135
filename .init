@@ -1,4 +1,5 @@
 #!/bin/bash
+# Simple workaround for Kali WSL starting up in Windows home dir
 
 cd ~
 
