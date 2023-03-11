@@ -4,13 +4,3 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-alias ls='ls --color=auto'
-PS1=' \u \W \$ '
-#PS1=' \u@\h \W \$ '
-
-alias la='ls -a'
-alias ll='ls -l'
-alias l='ls -la'
-
-alias gitroot='cd $(git rev-parse --show-toplevel)'
