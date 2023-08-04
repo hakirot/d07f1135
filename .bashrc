@@ -4,3 +4,5 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+source ~/.config/up/up.sh

@@ -18,3 +18,11 @@ alias gstat='git status'
 alias notes='cd ~/Documents/notes'
 
 alias backupConfs='~/Git/BackupConfigs/getConfs.py'
+
+alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
+alias rmshare='rm -rf /tmp/networkshare/*'
+
+PATH=$PATH:$HOME/Git/Treek/:$HOME/.local/bin/
+
+alias rsync="rsync -r --progress"
+
