@@ -12,7 +12,7 @@ gitCmd="git commit -m ${str}"
 eval "$gitCmd"
 
 # Read token
-value=`cat ~/Git/token/token`
+#value=`cat ~/Git/token/token`
 
 # Generate push command
 #cmd="git push https://hakirot:${value}@github.com/hakirot/BackupConfigs.git"
