@@ -50,4 +50,4 @@ if len(written) > 0:
     else:
         print('\033[1;35mExited.\0ll[m')
 else:
-    print('\033[1;35mFiles are up to date.\033[m')
+    print('\033[1;35mNothing to do.\033[m')
