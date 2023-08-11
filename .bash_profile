@@ -14,13 +14,11 @@ alias l='ls -la'
 
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias gstat='git status'
-
 alias notes='cd ~/Documents/notes'
 alias tasks='vim ~/Documents/notes/task'
 alias confs='vim -p ~/.bash_profile ~/.bashrc ~/.tmux.conf ~/.vimrc'
-
+alias commands='vim ~/Documents/notes/linux/commands'
 alias backupConfs='~/Git/BackupConfigs/getConfs.py'
-
 alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 alias rmshare='rm -rf /tmp/networkshare/*'
 
