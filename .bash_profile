@@ -16,7 +16,7 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias gstat='git status'
 
 alias notes='cd ~/Documents/notes'
-alias task='vim ~/Documents/notes/task'
+alias tasks='vim ~/Documents/notes/task'
 alias confs='vim -p ~/.bash_profile ~/.bashrc ~/.tmux.conf ~/.vimrc'
 
 alias backupConfs='~/Git/BackupConfigs/getConfs.py'
