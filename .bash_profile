@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 export PS1="\[\e[32m\][\[\e[31m\]\u \[\e[36m\]\w\[\e[32m\]]\[\e[32m\] $ \[\e[m\]"
 
 alias la='ls -a'
-alias ll='ls -l'
+alias ll='ls -la'
 alias l='ls -la'
 
 alias gitroot='cd $(git rev-parse --show-toplevel)'
