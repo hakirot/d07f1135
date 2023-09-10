@@ -6,7 +6,7 @@ import time
 names = []
 written = []
 homeDir = '/home/hakirot/'
-backupsDir = '/home/hakirot/Git/BackupConfigs/'
+backupsDir = '/home/hakirot/git/backup-configs/'
 
 backups = os.scandir(backupsDir)
 
@@ -48,6 +48,6 @@ if len(written) > 0:
 
         print('\033[1;35mDone!\033[m')
     else:
-        print('\033[1;35mExited.\0ll[m')
+        print('\033[1;35mExited.\033[m')
 else:
     print('\033[1;35mNothing to do.\033[m')
