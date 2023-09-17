@@ -20,10 +20,10 @@ alias commands='vim ~/dox/notes/linux/commands'
 alias backupConfs='~/git/backup-configs/getConfs.py'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
-alias rsync="rsync -r --progress"
+alias rsync='rsync -r --progress'
 alias wall="cd /home/hakirot/pix/wall/"
-alias psh="echo $PWD > $HOME/.config/psh/dir"
-alias psha="cd $(cat $HOME/.config/psh/dir)"
+alias psh='echo $PWD > $HOME/.config/psh/dir'
+alias psha='cd $(cat $HOME/.config/psh/dir)'
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 
 # Set name of the theme to load --- if set to "random", it will
