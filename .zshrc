@@ -39,7 +39,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -124,7 +124,7 @@ alias zshconf="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
-alias vima="/usr/bin/nvim -p ./*"
+alias vimall="/usr/bin/nvim -p ./*"
 
 #source /home/hakirot/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
