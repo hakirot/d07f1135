@@ -22,8 +22,8 @@ alias backupConfs='~/git/backup-configs/getConfs.py'
 #alias rmshare='rm -rf /tmp/networkshare/*'
 alias rsync='rsync -r --progress'
 alias wall="cd /home/hakirot/pix/wall/"
-alias psh='echo $PWD > $HOME/.config/psh/dir'
-alias psha='cd $(cat $HOME/.config/psh/dir)'
+function psh { echo $PWD > $HOME/.config/psh/dir; }
+function psha { cd $(cat $HOME/.config/psh/dir); }
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 
 # Set name of the theme to load --- if set to "random", it will

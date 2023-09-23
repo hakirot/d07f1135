@@ -54,6 +54,8 @@ highlight TabLineFill ctermfg=black ctermbg=black guifg=#ffffff guibg=#2d353b
 " ACTIVE tab color / text
 highlight TabLineSel ctermfg=black ctermbg=green guifg=#2d353b guibg=#e67e80
 
+hi Type ctermfg=blue guifg=blue
+
 " Lightline
 set laststatus=2
 
