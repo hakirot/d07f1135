@@ -3,8 +3,14 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# Please add these doodads to PATH
 alias newlook=~/.local/bin/newlook
+alias dynamake=~/.local/bin/dynamake
+alias gitty=~/.local/bin/gitty
+alias colortest=~/.local/bin/colortest
+alias sara=~/.local/bin/sara
 
+# TODO add skpd to path
 
 alias la='ls -a'
 alias ll='ls -la'
