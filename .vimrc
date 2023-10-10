@@ -2,8 +2,8 @@
 
 set nocompatible	
 syntax enable
-filetype plugin on
-filetype off
+"filetype plugin on
+"filetype off
 filetype plugin indent on
 
 call plug#begin()
