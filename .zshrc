@@ -9,6 +9,8 @@ alias dynamake=~/.local/bin/dynamake
 alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
 alias sara=~/.local/bin/sara
+alias tmux-start=~/.local/bin/tmux-start
+alias go=~/.local/bin/tmux-start
 
 # TODO add skpd to path
 
