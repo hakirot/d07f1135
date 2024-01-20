@@ -12,7 +12,7 @@ alias sara=~/.local/bin/sara
 alias tmux-start=~/.local/bin/tmux-start
 alias go=~/.local/bin/tmux-start
 
-# TODO add skpd to path
+# TODO add skps to path
 
 alias la='ls -a'
 alias ll='ls -la'
