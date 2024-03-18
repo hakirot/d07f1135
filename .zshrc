@@ -36,6 +36,7 @@ alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/
 alias clock="while :; do date +%I:%M | figlet -f swampland; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
 alias hakirot="cargo run"
+alias rs="cd ~/git/rust-tuts/rust-book/"
 
 alias vu="pactl set-sink-volume @DEFAULT_SINK@ +5%"
 alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
