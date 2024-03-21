@@ -35,8 +35,9 @@ function psha { cd $(cat $HOME/.config/psh/dir); }
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f swampland; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
-alias hakirot="cargo run"
+alias run="cargo run"
 alias rs="cd ~/git/rust-tuts/rust-book/"
+alias dc="cd"
 
 alias vu="pactl set-sink-volume @DEFAULT_SINK@ +5%"
 alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
