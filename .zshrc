@@ -39,7 +39,7 @@ alias run="cargo run"
 alias rs="cd ~/git/rust-tuts/rust-book/"
 alias dc="cd"
 
-alias vu="pactl set-sink-volume @DEFAULT_SINK@ +5%"
+alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
 alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
 
 # Set name of the theme to load --- if set to "random", it will
