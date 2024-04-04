@@ -42,6 +42,16 @@ alias dc="cd"
 alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
 alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
 
+alias vi="/usr/bin/vim"
+alias vim="/usr/bin/nvim"
+alias vimall="/usr/bin/nvim -p ./*"
+
+function hakirotsend () {
+  echo "sending $1 to HAKIROT"
+  sleep 1
+  rsync -r --progress $1 hakirot@192.168.0.124:/home/hakirot/Downloads
+}
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -138,9 +148,6 @@ export EDITOR='nvim'
 # Example aliases
 alias zshconf="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vi="/usr/bin/vim"
-alias vim="/usr/bin/nvim"
-alias vimall="/usr/bin/nvim -p ./*"
 
 #source /home/hakirot/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
