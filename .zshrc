@@ -9,8 +9,9 @@ alias dynamake=~/.local/bin/dynamake
 alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
 alias sara=~/.local/bin/sara
-alias tmux-start=~/.local/bin/tmux-start
-alias go=~/.local/bin/tmux-start
+#alias tmux-start=~/.local/bin/tmux-start
+#alias go=~/.local/bin/tmux-start
+alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 # TODO add skps to path
 
@@ -19,8 +20,6 @@ alias ll='ls -la'
 alias l='ls -la'
 alias sl='ls'
 
-alias gitroot='cd $(git rev-parse --show-toplevel)'
-alias gstat='git status'
 alias notes='cd ~/dox/notes2'
 alias tasks='vim ~/dox/notes2/tasks'
 alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
@@ -38,13 +37,22 @@ alias site="cd ~/git/site"
 alias run="cargo run"
 alias rs="cd ~/git/rust-tuts/rust-book/"
 alias dc="cd"
+alias n="neofetch"
+alias c="colortest"
+alias s="sara"
+alias e="env | sort"
 
-alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
-alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
+# old volume controls
+#alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
+#alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
+
+alias v="nvim"
 
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
 alias vimall="/usr/bin/nvim -p ./*"
+
+alias zap="kill -9 "
 
 function hakirotsend () {
   echo "sending $1 to HAKIROT"
