@@ -39,7 +39,7 @@ alias rs="cd ~/git/rust-tuts/rust-book/"
 alias dc="cd"
 alias n="neofetch"
 alias c="colortest"
-alias s="sara"
+alias s="grep -rin"
 alias e="env | sort"
 
 # old volume controls
