@@ -3,57 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# Please add these doodads to PATH
-alias newlook=~/.local/bin/newlook
-alias dynamake=~/.local/bin/dynamake
-alias gitty=~/.local/bin/gitty
-alias colortest=~/.local/bin/colortest
-alias sara=~/.local/bin/sara
-#alias tmux-start=~/.local/bin/tmux-start
-#alias go=~/.local/bin/tmux-start
-alias passport='sudo mount /dev/sda1 /mnt/passport'
-
-# TODO add skps to path
-
-alias la='ls -a'
-alias ll='ls -la'
-alias l='ls -la'
-alias sl='ls'
-
-alias notes='cd ~/dox/notes2'
-alias tasks='vim ~/dox/notes2/tasks'
-alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
-alias commands='vim ~/dox/notes/linux/commands'
-alias backupConfs='~/git/backup-configs/getConfs.py'
-alias startproxy='ssh -D 1337 -N -C node'
-#alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
-#alias rmshare='rm -rf /tmp/networkshare/*'
-alias rsync='rsync -r --progress'
-alias walls="cd /home/hakirot/pix/wall/"
-function psh { echo $PWD > $HOME/.config/psh/dir; }
-function psha { cd $(cat $HOME/.config/psh/dir); }
-alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
-alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
-alias site="cd ~/git/site"
-alias run="cargo run"
-alias rs="cd ~/git/rust-tuts/rust-book/"
-alias dc="cd"
-alias n="neofetch"
-alias c="colortest"
-alias s="grep -rin"
-alias e="env | sort"
-
-# old volume controls
-#alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
-#alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
-
-alias v="nvim"
-
-alias vi="/usr/bin/vim"
-alias vim="/usr/bin/nvim"
-alias vimall="/usr/bin/nvim -p ./*"
-
-alias zap="kill -9 "
 
 function hakirotsend () {
   echo "sending $1 to HAKIROT"
@@ -178,3 +127,62 @@ setopt SHARE_HISTORY
 
 # END HISTORY
 
+# Please add these doodads to PATH
+alias newlook=~/.local/bin/newlook
+alias dynamake=~/.local/bin/dynamake
+alias gitty=~/.local/bin/gitty
+alias colortest=~/.local/bin/colortest
+alias sara=~/.local/bin/sara
+#alias tmux-start=~/.local/bin/tmux-start
+#alias go=~/.local/bin/tmux-start
+alias passport='sudo mount /dev/sda1 /mnt/passport'
+
+# TODO add skps to path
+
+alias la='ls -a'
+alias ll='ls -la'
+alias l='ls -la'
+alias sl='ls'
+
+alias notes='cd ~/dox/notes2'
+alias tasks='vim ~/dox/notes2/tasks'
+alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
+alias commands='vim ~/dox/notes/linux/commands'
+alias backupConfs='~/git/backup-configs/getConfs.py'
+alias startproxy='ssh -D 1337 -N -C node'
+#alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
+#alias rmshare='rm -rf /tmp/networkshare/*'
+alias rsync='rsync -r --progress'
+alias walls="cd /home/hakirot/pix/wall/"
+function psh { echo $PWD > $HOME/.config/psh/dir; }
+function psha { cd $(cat $HOME/.config/psh/dir); }
+alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
+alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
+alias site="cd ~/git/site"
+alias run="cargo run"
+alias rs="cd ~/git/rust-tuts/rust-book/"
+alias dc="cd"
+alias n="neofetch"
+alias c="colortest"
+alias s="grep -rin"
+alias e="env | sort"
+
+# old volume controls
+#alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
+#alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
+
+alias v="nvim"
+
+alias vi="/usr/bin/vim"
+alias vim="/usr/bin/nvim"
+alias vimall="/usr/bin/nvim -p ./*"
+
+alias zap="kill -9 "
+
+#gits
+alias g='git status -s'
+alias ga='git add'
+alias gaa='git add --all'
+alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
+alias gl='git log --all --decorate --graph --oneline'
+alias gp='git push'
