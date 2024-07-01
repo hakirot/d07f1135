@@ -172,7 +172,6 @@ alias e="env | sort"
 #alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
 
 alias v="nvim"
-
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
 alias vimall="/usr/bin/nvim -p ./*"
@@ -187,5 +186,13 @@ alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
 
-# default start command
-sara
+# if running DWM
+if [[ ! -z $(pgrep dwm) ]]; then
+  # and tmux
+  if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
+    sara
+  # if no tmux run tmux
+  else
+    tmux
+  fi
+fi
