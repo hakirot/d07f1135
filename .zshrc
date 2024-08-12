@@ -190,8 +190,8 @@ alias gp='git push'
 if [[ ! -z $(pgrep dwm) ]]; then
   # and tmux
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
-    sara
-  # if no tmux run tmux
+#   sara
+  # if no tmux run tmux I literally cannot function without it
   else
     tmux
   fi
