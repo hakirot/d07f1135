@@ -185,6 +185,7 @@ alias gaa='git add --all'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
+alias x='startx'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
