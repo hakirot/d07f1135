@@ -133,8 +133,6 @@ alias dynamake=~/.local/bin/dynamake
 alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
 alias sara=~/.local/bin/sara
-#alias tmux-start=~/.local/bin/tmux-start
-#alias go=~/.local/bin/tmux-start
 alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 # TODO add skps to path
@@ -166,12 +164,13 @@ alias rs="cd ~/git/rust-tuts/rust-book/"
 alias dc="cd"
 
 # oneshots
+alias x='startx'
 alias n="neofetch"
 alias c="colortest"
 alias s="grep -rin"
 alias e="env | sort"
 
-# old volume controls
+# old volume controls when knob isn't available
 #alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
 #alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
 
@@ -191,7 +190,6 @@ alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
 
 # SARA
-alias x='startx'
 alias skps='cd ~/skps'
 
 # if running DWM
