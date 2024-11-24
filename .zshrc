@@ -160,8 +160,12 @@ alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
 alias run="cargo run"
+
+# fatfingers
 alias rs="cd ~/git/rust-tuts/rust-book/"
 alias dc="cd"
+
+# oneshots
 alias n="neofetch"
 alias c="colortest"
 alias s="grep -rin"
@@ -185,7 +189,10 @@ alias gaa='git add --all'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
+
+# SARA
 alias x='startx'
+alias skps='cd ~/skps'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
