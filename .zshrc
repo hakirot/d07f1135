@@ -139,7 +139,7 @@ alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 alias la='ls -a'
 alias ll='ls -la'
-alias l='ls -la'
+alias l='ls -1a'
 alias sl='ls'
 
 alias notes='cd ~/dox/notes2'
@@ -169,6 +169,11 @@ alias n="neofetch"
 alias c="colortest"
 alias s="grep -rin"
 alias e="env | sort"
+
+# fast find
+function f {
+  find . -iname $1
+}
 
 # old volume controls when knob isn't available
 #alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
