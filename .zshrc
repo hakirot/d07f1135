@@ -142,8 +142,12 @@ alias ll='ls -la'
 alias l='ls -1a'
 alias sl='ls'
 
+# nav
 alias notes='cd ~/dox/notes2'
 alias tasks='vim ~/dox/notes2/tasks'
+alias dls='cd ~/dls'
+alias skps='cd ~/skps'
+
 alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
 alias commands='vim ~/dox/notes/linux/commands'
 alias backupConfs='~/git/backup-configs/getConfs.py'
@@ -195,9 +199,6 @@ alias gaa='git add --all'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
-
-# SARA
-alias skps='cd ~/skps'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
