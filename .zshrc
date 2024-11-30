@@ -169,6 +169,7 @@ alias n="neofetch"
 alias c="colortest"
 alias s="grep -rin"
 alias e="env | sort"
+alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 
 # fast find
 function f {
