@@ -170,6 +170,7 @@ alias c="colortest"
 alias s="grep -rin"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
+alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 
 # fast find
 function f {
