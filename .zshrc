@@ -41,7 +41,7 @@ CASE_SENSITIVE="true"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+#DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -178,7 +178,7 @@ alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 
 # fast find
 function f {
-  find . -iname $1
+  find . -iname "$1"
 }
 
 # old volume controls when knob isn't available
@@ -210,3 +210,7 @@ if [[ ! -z $(pgrep dwm) ]]; then
     tmux
   fi
 fi
+
+# No idea why "backup files" are black.. observe via 
+#    dircolors --print-database
+export LS_COLORS="${LS_COLORS}:*~=1;35:*#=1;35:*.bak=1;35:*.crdownload=1;35:*.dpkg-dist=1;35:*.dpkg-new=1;35:*.dpkg-old=1;35:*.dpkg-tmp=1;35:*.old=1;35:*.orig=1;35:*.part=1;35:*.rej=1;35:*.rpmnew=1;35:*.rpmorig=1;35:*.rpmsave=1;35:*.swp=1;35:*.tmp=1;35:*.ucf-dist=1;35:*.ucf-new=1;35:*.ucf-old=1;35"
