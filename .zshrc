@@ -137,10 +137,9 @@ alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 # TODO add skps to path
 
-alias la='ls -a'
-alias ll='ls -la'
-alias l='ls -1a'
-alias sl='ls'
+alias la='ls -A'
+alias ll='ls -lA'
+alias l='ls -1A'
 
 # nav
 alias notes='cd ~/dox/notes2'
@@ -163,9 +162,18 @@ alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
 alias run="cargo run"
 
-# fatfingers
 alias rs="cd ~/git/rust-tuts/rust-book/"
-alias dc="cd"
+
+# fatfingers
+function dc {
+  echo "$1 <-- lolfat"
+  cd $1
+} 
+
+function sl {
+  echo "lolfat"
+  ls
+}
 
 # oneshots
 alias x='startx'
