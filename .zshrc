@@ -166,12 +166,10 @@ alias rs="cd ~/git/rust-tuts/rust-book/"
 
 # fatfingers
 function dc {
-  echo "$1 <-- lolfat"
   cd $1
 } 
 
 function sl {
-  echo "lolfat"
   ls
 }
 
