@@ -185,7 +185,7 @@ alias p='~/.config/polybar/bar.sh' # AKA alias tasks
 
 # fast find
 function f {
-  find . -iname "$1"
+  find . -iname "*$1*"
 }
 
 # old volume controls when knob isn't available
