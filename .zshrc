@@ -137,10 +137,10 @@ alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 # TODO add skps to path
 
-alias la='ls -a'
-alias ll='ls -la'
-alias l='ls -1a'
-alias sl='ls'
+alias la='ls -A'
+alias ll='ls -lA'
+alias l='ls -1A'
+alias sl='ls -A'
 
 # nav
 alias notes='cd ~/dox/notes2'
@@ -158,13 +158,13 @@ alias rsync='rsync -r --progress'
 alias walls="cd /home/hakirot/pix/wall/"
 function psh { echo $PWD > $HOME/.config/psh/dir; }
 function psha { cd $(cat $HOME/.config/psh/dir); }
+function backlight { sudo bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness" }
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
 alias run="cargo run"
 
-# fatfingers
-alias rs="cd ~/git/rust-tuts/rust-book/"
+# fatfinger
 alias dc="cd"
 
 # oneshots
@@ -192,8 +192,10 @@ alias vimall="/usr/bin/nvim -p ./*"
 
 alias zap="kill -9 "
 
-#gits
+# gits
 alias g='git status -s'
+alias gs='git status'
+alias gc='git commit -m'
 alias ga='git add'
 alias gaa='git add --all'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
