@@ -171,14 +171,14 @@ alias dc="cd"
 alias x='startx'
 alias n="neofetch"
 alias c="colortest"
-alias s="grep -rin"
+alias s="grep -riIn --exclude-dir node_modules"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 
 # fast find
 function f {
-  find . -iname $1
+  find . -iname "*$1*"
 }
 
 # old volume controls when knob isn't available
@@ -201,6 +201,8 @@ alias gaa='git add --all'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
+alias gdh='git diff HEAD'
+alias gdhh='git diff HEAD~1..HEAD'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
