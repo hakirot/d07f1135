@@ -203,6 +203,7 @@ alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
 alias gdh='git diff HEAD'
 alias gdhh='git diff HEAD~1..HEAD'
+alias gdmh='git diff main..HEAD'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
