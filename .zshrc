@@ -209,9 +209,14 @@ alias gdmh='git diff main..HEAD'
 if [[ ! -z $(pgrep dwm) ]]; then
   # and tmux
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
-#   sara
+    sara
   # if no tmux run tmux I literally cannot function without it
   else
     tmux
   fi
 fi
+
+# Screens
+
+#xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
+
