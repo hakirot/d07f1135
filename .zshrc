@@ -132,7 +132,7 @@ alias newlook=~/.local/bin/newlook
 alias dynamake=~/.local/bin/dynamake
 alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
-alias sara=~/.local/bin/sara
+alias sara="cd ~/git/title-sara/"
 alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 # TODO add skps to path
@@ -148,6 +148,7 @@ alias tasks='vim ~/dox/notes2/tasks'
 alias dls='cd ~/dls'
 alias skps='cd ~/skps'
 alias gits='cd ~/git'
+alias config='cd ~/.config'
 
 alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
 alias commands='vim ~/dox/notes/linux/commands'
@@ -213,7 +214,7 @@ alias gdmh='git diff main..HEAD'
 if [[ ! -z $(pgrep dwm) ]]; then
   # and tmux
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
-    sara
+    $HOME/git/title-sara/sara
   # if no tmux run tmux I literally cannot function without it
   else
     tmux
