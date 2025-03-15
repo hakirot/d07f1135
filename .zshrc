@@ -160,7 +160,7 @@ alias rsync='rsync -r --progress'
 alias walls="cd /home/hakirot/pix/wall/"
 function psh { echo $PWD > $HOME/.config/psh/dir; }
 function psha { cd $(cat $HOME/.config/psh/dir); }
-function backlight { sudo bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness" }
+function bl { bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness" }
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
@@ -225,3 +225,7 @@ fi
 
 #xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
 
+# if file ~/.saraexit exits
+#   Read file
+#   cd to direcory
+#   Delete file
