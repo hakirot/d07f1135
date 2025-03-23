@@ -143,19 +143,22 @@ alias l='ls -1A'
 alias sl='ls -A'
 
 # nav
-alias notes='cd ~/dox/notes2'
-alias tasks='vim ~/dox/notes2/tasks'
 alias dls='cd ~/dls'
+alias Dow='cd ~/Downloads'
+alias D='cd ~/Downloads'
+alias dox='cd ~/Downloads'
+alias gits='cd ~/Downloads'
+alias lib='cd ~/lib'
+alias pix='cd ~/Downloads'
 alias skps='cd ~/skps'
 alias config='cd ~/.config'
 
-alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
-alias commands='vim ~/dox/notes/linux/commands'
+alias notes='cd ~/dox/notes2'
+
 alias backupConfs='~/git/backup-configs/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
-alias rsync='rsync -r --progress'
 alias walls="cd /home/hakirot/pix/wall/"
 function psh { echo $PWD > $HOME/.config/psh/dir; }
 function psha { cd $(cat $HOME/.config/psh/dir); }
@@ -167,6 +170,10 @@ alias run="cargo run"
 
 # fatfinger
 alias dc="cd"
+
+# wider
+alias rsync='rsync -r --progress'
+alias bat='bat --theme base16-256'
 
 # oneshots
 alias x='startx'
