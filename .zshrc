@@ -182,6 +182,7 @@ alias c="colortest"
 alias s="grep -riIn --exclude-dir node_modules"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
+alias t="tree"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
 
