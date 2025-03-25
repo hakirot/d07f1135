@@ -182,8 +182,8 @@ alias c="colortest"
 alias s="grep -riIn --exclude-dir node_modules"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
-alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
-alias p='$HOME/.config/polybar/bar.sh'
+#alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
+#alias p='$HOME/.config/polybar/bar.sh'
 
 # fast find
 function f {
@@ -216,10 +216,10 @@ alias gdmh='git diff main..HEAD'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
-  # and tmux
+  # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
     $HOME/git/title-sara/sara
-  # if no tmux run tmux I literally cannot function without it
+  # if no tmux omg please start tmux
   else
     tmux
   fi
