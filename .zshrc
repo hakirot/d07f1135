@@ -219,7 +219,8 @@ alias gdmh='git diff main..HEAD'
 if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
-    $HOME/git/title-sara/sara
+  # Optional
+  # $HOME/git/title-sara/sara
   # if no tmux omg please start tmux
   else
     tmux
