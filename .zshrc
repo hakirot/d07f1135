@@ -163,7 +163,13 @@ alias startproxy='ssh -D 1337 -N -C node'
 alias walls="cd /home/hakirot/pix/wall/"
 function psh { echo $PWD > $HOME/.config/psh/dir; }
 function psha { cd $(cat $HOME/.config/psh/dir); }
-function bl { bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness" }
+function bl { 
+  if (( $# > 0 )); then
+    bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness"
+  else
+    cat /sys/class/backlight/intel_backlight/actual_brightness
+  fi
+}
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
