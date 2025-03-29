@@ -147,6 +147,7 @@ alias notes='cd ~/dox/notes2'
 alias tasks='vim ~/dox/notes2/tasks'
 alias dls='cd ~/dls'
 alias skps='cd ~/skps'
+alias gits='cd ~/git'
 
 alias confs='vim -p ~/.zshrc ~/.tmux.conf ~/.vimrc'
 alias commands='vim ~/dox/notes/linux/commands'
@@ -162,6 +163,8 @@ alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias site="cd ~/git/site"
 alias run="cargo run"
+# tmatrix-git
+alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 
 # fatfingers
 alias rs="cd ~/git/rust-tuts/rust-book/"
@@ -174,11 +177,11 @@ alias c="colortest"
 alias s="grep -rin"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
-alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
+alias t='tree'
 
 # fast find
 function f {
-  find . -iname $1
+  find . -iname "*$1*"
 }
 
 # old volume controls when knob isn't available
@@ -194,11 +197,15 @@ alias zap="kill -9 "
 
 #gits
 alias g='git status -s'
+alias gs='git status'
+alias gc='git commit -m'
 alias ga='git add'
 alias gaa='git add --all'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
+alias gdmh='git diff main..HEAD'
+alias gdhh='git diff HEAD~1..HEAD'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
