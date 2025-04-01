@@ -134,8 +134,9 @@ alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
 alias sara="cd ~/git/title-sara/"
 alias passport='sudo mount /dev/sda1 /mnt/passport'
-
 # TODO add skps to path
+
+alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 
 alias la='ls -A'
 alias ll='ls -lA'
@@ -191,6 +192,7 @@ alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias t="tree"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
+alias m='tmatrix -c default -t SARA --no-fade -s 20'
 
 # fast find
 function f {
