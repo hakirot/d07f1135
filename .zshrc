@@ -7,7 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 function hakirotsend () {
   echo "sending $1 to HAKIROT"
   sleep 1
-  rsync -r --progress $1 hakirot@192.168.0.124:/home/hakirot/Downloads
+  rsync -r --progress $1 hakirot@192.168.0.103:/home/hakirot/Downloads
 }
 
 # Set name of the theme to load --- if set to "random", it will
@@ -154,6 +154,8 @@ alias pix='cd ~/pix'
 alias skps='cd ~/skps'
 alias gits='cd ~/git'
 alias config='cd ~/.config'
+alias site="cd ~/git/site"
+alias suckless="cd ~/git/suckless-hakirot"
 
 alias notes='cd ~/dox/notes2'
 
@@ -173,7 +175,6 @@ function bl {
 }
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
-alias site="cd ~/git/site"
 alias run="cargo run"
 # tmatrix-git
 alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
@@ -232,15 +233,14 @@ if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-  # $HOME/git/title-sara/sara
-  # if no tmux omg please start tmux
+    $HOME/git/title-sara/sara
+  # if no tmux please start tmux
   else
     tmux
   fi
 fi
 
 # Screens
-
 #xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
 
 # if file ~/.saraexit exits
