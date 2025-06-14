@@ -140,7 +140,7 @@ alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 
 alias la='ls -A'
 alias ll='ls -lA'
-alias l='ls -1A'
+alias l='ls -1'
 alias sl='ls -A'
 
 # nav
@@ -187,7 +187,7 @@ alias bat='bat --theme base16-256'
 alias x='startx'
 alias n="neofetch"
 alias c="colortest"
-alias s="grep -riIn --exclude-dir node_modules"
+alias s="grep -riIn --exclude-dir node_modules --exclude-dir target"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias t="tree"
