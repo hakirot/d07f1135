@@ -127,6 +127,9 @@ setopt SHARE_HISTORY
 
 # END HISTORY
 
+RED='\e[31m'
+RESET='\e[0m'
+
 # Please add these doodads to PATH
 alias newlook=~/.local/bin/newlook
 alias dynamake=~/.local/bin/dynamake
@@ -174,7 +177,7 @@ function bl {
 }
 alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
-alias run="cargo run"
+alias cr="cargo run"
 
 # fatfinger
 alias dc="cd"
@@ -190,10 +193,18 @@ alias c="colortest"
 alias s="grep -riIn --exclude-dir node_modules --exclude-dir target"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
-alias t="tree"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
 alias m='tmatrix -c default -t SARA --no-fade -s 20'
+function t {
+  test -d ./target
+  if [[ $? == 0 ]] then
+    echo "${RED}   -target${RESET}"
+    tree -I target
+  else
+    tree
+  fi
+}
 
 # fast find
 function f {
