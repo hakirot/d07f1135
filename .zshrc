@@ -130,6 +130,7 @@ setopt SHARE_HISTORY
 RED='\e[31m'
 RESET='\e[0m'
 
+
 # Please add these doodads to PATH
 alias newlook=~/.local/bin/newlook
 alias dynamake=~/.local/bin/dynamake
@@ -213,6 +214,21 @@ function t {
 # fast find
 function f {
   find . -iname "*$1*"
+}
+
+function pw {
+  gpg --symmetric --output $HOME/.config/pw.gpg
+}
+
+export SUDO_ASKPASS=$HOME/skps/secret.sh
+# sudo password storage
+function sudo {
+  test -f $HOME/.config/pw.gpg
+  if [[ $? == 0 ]]; then
+    command sudo --askpass "$@"
+  else
+    command sudo "$@"
+  fi
 }
 
 # old volume controls when knob isn't available
