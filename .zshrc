@@ -197,15 +197,7 @@ alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
 alias m='tmatrix -c default -t SARA --no-fade -s 20'
-function t {
-  test -d ./target
-  if [[ $? == 0 ]] then
-    echo "${RED}   -target${RESET}"
-    tree -I target
-  else
-    tree
-  fi
-}
+alias t='tree -I target'
 
 # fast find
 function f {
