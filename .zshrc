@@ -124,6 +124,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
+setopt NO_NOTIFY
 
 # END HISTORY
 
@@ -137,13 +138,14 @@ alias dynamake=~/.local/bin/dynamake
 alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
 alias sara="cd ~/git/title-sara/"
-alias passport='sudo mount /dev/sda1 /mnt/passport'
+alias saran="echo \"neofetch\nfor i in {1..23}\ndo\necho\ndone\" | /usr/bin/bash"
+alias passport='sudo mount /dev/sdc1 /mnt/passport'
 # TODO add skps to path
 
 alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 
 alias la='ls -A'
-alias ll='ls -lA'
+alias ll='ls -l'
 alias l='ls -1'
 alias sl='ls -A'
 
@@ -151,13 +153,14 @@ alias sl='ls -A'
 alias dls='cd ~/dls'
 alias Dow='cd ~/Downloads'
 alias D='cd ~/Downloads'
-alias dox='cd ~/Downloads'
+alias dox='cd ~/dox'
 alias gits='cd ~/git'
 alias lib='cd ~/lib'
 alias pix='cd ~/pix'
 alias skps='cd ~/skps'
 alias config='cd ~/.config'
 alias site="cd ~/git/site"
+alias rusties="cd ~/git/rust-book/projects"
 alias suckless="cd ~/git/suckless-hakirot"
 
 alias notes='cd ~/dox/notes2'
@@ -176,7 +179,7 @@ function bl {
     cat /sys/class/backlight/intel_backlight/actual_brightness
   fi
 }
-alias screenshot="mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
+alias screenshot="sleep 5 && mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias cr="cargo run"
 
@@ -196,7 +199,7 @@ alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
-alias m='tmatrix -c default -t SARA --no-fade -s 20'
+alias m='tmatrix -c default -t SARA --no-fade -s 10'
 alias t='tree -I target'
 
 # fast find
@@ -205,7 +208,7 @@ function f {
 }
 
 function pw {
-  gpg --symmetric --output $HOME/.config/pw.gpg
+  gpg --symmetric --output $HOME/.config/pw.gpg # [enter] then ^D to quit
 }
 
 export SUDO_ASKPASS=$HOME/skps/secret.sh
