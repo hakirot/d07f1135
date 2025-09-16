@@ -147,7 +147,7 @@ alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 alias la='ls -A'
 alias ll='ls -l'
 alias l='ls -1'
-alias sl='ls -A'
+alias sl='ls --color=tty'
 
 # nav
 alias dls='cd ~/dls'
@@ -197,6 +197,7 @@ alias c="colortest"
 alias s="grep -riIn --exclude-dir node_modules --exclude-dir target"
 alias e="env | sort"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
+alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
 alias m='tmatrix -c default -t SARA --no-fade -s 10'
