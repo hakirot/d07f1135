@@ -34,7 +34,7 @@ obj.close()
 if len(written) > 0:
     for entry in written:
         print("\033[1;34mCopied " + entry + " to " + backupsDir + "\033[m")
-    push = input("\033[1;35mCommit and Push? [Y/y]\033[m\n")
+    push = input("\033[1;35mCommit and Push? [y/N]\033[m\n")
     if push == 'Y' or push == 'y':
 
         commitMsg = input('\033[1;35mEnter Commit Msg:\033[1;33m ')
