@@ -173,7 +173,7 @@ alias startproxy='ssh -D 1337 -N -C node'
 alias walls="cd /home/hakirot/pix/wall/"
 function psh { echo $PWD > $HOME/.config/psh/dir; }
 function psha { dir=$(<$HOME/.config/psh/dir); cd "$dir" }
-function bl { 
+function bl {
   if (( $# > 0 )); then
     bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness"
   else
