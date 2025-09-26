@@ -45,8 +45,7 @@ if len(written) > 0:
         gitScript = backupsDir + "gitConfs.sh"
         os.system('{} {} '.format('/bin/sh', gitScript) + commitMsg)
         print('\033[m')
-
-        print('\033[1;35mDone!\033[m')
+        print('\033[1;35mDone.\033[m')
     else:
         print('\033[1;35mExited.\033[m')
 else:
