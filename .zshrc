@@ -175,7 +175,7 @@ alias walls="cd /home/hakirot/pix/wall/"
 function pshd {
   if (( $# > 0 )); then
     args=("$@")
-    if [ "$1" = "-l" ]; then
+    if [ "$1" = "-l" ] || [ "$1" = "-q" ]; then
       counter=0
       while read p; do
         echo "[$counter] $p"
@@ -183,6 +183,8 @@ function pshd {
       done <$HOME/.config/psh/dir
     elif [ "$1" = "--" ]; then
       cd $(head -n 1 $HOME/.config/psh/dir)
+    elif [ "$1" = "-e" ]; then
+      nvim $HOME/.config/psh/dir
     else
       re='^[0-9]+$'
       if [[ $1 =~ $re ]] ; then
@@ -196,17 +198,13 @@ function pshd {
       fi
     fi
   else
-      echo $PWD | cat - $HOME/.config/psh/dir > $HOME/.config/psh/temp 
+      echo $PWD | cat - $HOME/.config/psh/dir > $HOME/.config/psh/temp
       mv $HOME/.config/psh/temp $HOME/.config/psh/dir
       awk '!seen[$0]++' $HOME/.config/psh/dir > $HOME/.config/psh/temp
       mv $HOME/.config/psh/temp $HOME/.config/psh/dir
       head -n 10 $HOME/.config/psh/dir > $HOME/.config/psh/temp
       mv $HOME/.config/psh/temp $HOME/.config/psh/dir
   fi
-}
-
-function psha {
-  dir=$(<$HOME/.config/psh/dir)
 }
 
 function bl {
