@@ -276,18 +276,8 @@ alias vimall="/usr/bin/nvim -p ./*"
 
 alias zap="kill -9 "
 
-# gits
-alias g='git status -s'
-alias gs='git status'
-alias gc='git commit -m'
-alias ga='git add'
-alias gaa='git add --all'
+# nav to git project root
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
-alias gl='git log --all --decorate --graph --oneline'
-alias gp='git push'
-alias gdh='git diff HEAD'
-alias gdhh='git diff HEAD~1..HEAD'
-alias gdmh='git diff main..HEAD'
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
@@ -303,8 +293,3 @@ fi
 
 # Screens
 #xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
-
-# if file ~/.saraexit exits
-#   Read file
-#   cd to direcory
-#   Delete file
