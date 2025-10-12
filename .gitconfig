@@ -12,6 +12,7 @@
   A = add -all
   a = add
   c = commit -m
+  d = diff
   dh = diff HEAD
   dhh = diff HEAD~1..HEAD
   dmh = diff main..HEAD
