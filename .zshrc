@@ -113,7 +113,8 @@ alias zshconf="source ~/.zshrc"
 bindkey "^R" history-incremental-search-backward
 
 # History
-export HISTFILE=$ZDOTDIR/.host_zsh
+#export HISTFILE=$ZDOTDIR/.host_zsh
+export HISTFILE=$HOME/.host_zsh
 export HISTSIZE=5000000
 export SAVEHIST=$HISTSIZE
 
@@ -138,7 +139,7 @@ alias dynamake=~/.local/bin/dynamake
 alias gitty=~/.local/bin/gitty
 alias colortest=~/.local/bin/colortest
 alias sara="cd ~/git/title-sara/"
-alias saran="echo \"neofetch\nfor i in {1..23}\ndo\necho\ndone\" | /usr/bin/bash"
+alias saran="echo \"fastfetch\nfor i in {1..23}\ndo\necho\ndone\" | /usr/bin/bash"
 alias passport='sudo mount /dev/sdc1 /mnt/passport'
 # TODO add skps to path
 
@@ -164,7 +165,7 @@ alias site="cd ~/git/site"
 alias rusties="cd ~/git/rust-book/projects"
 alias suckless="cd ~/git/suckless-hakirot"
 
-alias notes='cd ~/dox/notes2'
+alias notes='cd ~/dox/.notes'
 
 alias backupConfs='~/git/backup-configs/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
@@ -194,16 +195,22 @@ function pshd {
         fi
         ((counter++))
       done <$HOME/.config/psh/dir
-    else
-      echo "no-op"
-    fi
-  else
+    elif [[ $1 =~ "-p" ]] ; then
       echo $PWD | cat - $HOME/.config/psh/dir > $HOME/.config/psh/temp
       mv $HOME/.config/psh/temp $HOME/.config/psh/dir
       awk '!seen[$0]++' $HOME/.config/psh/dir > $HOME/.config/psh/temp
       mv $HOME/.config/psh/temp $HOME/.config/psh/dir
       head -n 10 $HOME/.config/psh/dir > $HOME/.config/psh/temp
       mv $HOME/.config/psh/temp $HOME/.config/psh/dir
+    else
+      echo "no-op"
+    fi
+  else
+    counter=0
+    while read p; do
+      echo "[$counter] $p"
+      ((counter++))
+    done <$HOME/.config/psh/dir
   fi
 }
 
@@ -238,16 +245,18 @@ alias bat='bat --theme base16-256'
 
 # oneshots
 alias x='startx'
-alias n="neofetch"
+alias n="fastfetch"
 alias c="colortest"
 alias s="grep -riIn --exclude-dir node_modules --exclude-dir target"
 alias e="env | sort"
+alias g="git status -s"
+alias gs="git status"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
 alias m='tmatrix -c default -t SARA --no-fade -s 10'
-alias t='tree -I target'
+alias t='tree -I target -I node_modules'
 
 # fast find
 function f {
@@ -269,6 +278,16 @@ function sudo {
   fi
 }
 
+function shweep {
+  if [[ -f "$HOME/skps/cleanup.sh" ]]; then
+    source $HOME/skps/cleanup.sh
+  else
+    echo "Cleanup script not detected!"
+    sleep 2
+  fi
+  shutdown now
+}
+
 # old volume controls when knob isn't available
 #alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
 #alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
@@ -278,19 +297,14 @@ alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
 alias vimall="/usr/bin/nvim -p ./*"
 
-alias zap="kill -9 "
-
 # nav to git project root
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
-<<<<<<< HEAD
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
 alias gdmh='git diff main..HEAD'
 alias gdh='git diff HEAD'
 alias gdhh='git diff HEAD~1..HEAD'
 alias gdmh='git diff main..HEAD'
-=======
->>>>>>> 2e7366f (git command rehauls)
 
 # if running DWM
 if [[ ! -z $(pgrep dwm) ]]; then
