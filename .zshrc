@@ -144,6 +144,7 @@ alias passport='sudo mount /dev/sdc1 /mnt/passport'
 # TODO add skps to path
 
 alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
+alias screenkey='screenkey --window -s small --font-color "#a3361f"'
 
 alias la='ls -A'
 alias ll='ls -l'
