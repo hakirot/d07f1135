@@ -265,8 +265,7 @@ function pw {
 export SUDO_ASKPASS=$HOME/skps/secret.sh
 # sudo password storage
 function sudo {
-  test -f $HOME/.config/pw.gpg
-  if [[ $? == 0 ]]; then
+  if [[ -f "$HOME/.config/pw.gpg" ]]; then
     command sudo --askpass "$@"
   else
     command sudo "$@"
