@@ -220,13 +220,6 @@ function bl {
   fi
 }
 
-function bl {
-  if (( $# > 0 )); then
-    bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness"
-  else
-    cat /sys/class/backlight/intel_backlight/actual_brightness
-  fi
-}
 alias screenshot="sleep 5 && mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias cr="cargo run"
@@ -305,6 +298,12 @@ if [[ ! -z $(pgrep dwm) ]]; then
   # if no tmux please start tmux
   else
     tmux
+  fi
+else
+  if [ "$TERM" = "linux" ] ; then
+    wal --theme custom-sara_white
+  elif [ "$TERM" = "tmux-256color" ] ; then
+    $HOME/git/title-sara/sara
   fi
 fi
 
