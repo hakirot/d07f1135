@@ -170,6 +170,7 @@ alias startproxy='ssh -D 1337 -N -C node'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
 alias walls="cd /home/hakirot/pix/wall/"
+alias pingg="ping 8.8.8.8"
 
 function pshd {
   if (( $# > 0 )); then
@@ -302,6 +303,7 @@ if [[ ! -z $(pgrep dwm) ]]; then
 else
   if [ "$TERM" = "linux" ] ; then
     wal --theme custom-sara_white
+    $HOME/git/title-sara/sara
   elif [ "$TERM" = "tmux-256color" ] ; then
     $HOME/git/title-sara/sara
   fi
