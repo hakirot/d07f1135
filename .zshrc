@@ -174,6 +174,7 @@ alias startproxy='ssh -D 1337 -N -C node'
 #alias rmshare='rm -rf /tmp/networkshare/*'
 alias walls="cd /home/hakirot/pix/wall/"
 alias pingg="ping 8.8.8.8"
+alias xc="xcolor"
 
 function pshd {
   if (( $# > 0 )); then
@@ -213,14 +214,6 @@ function pshd {
       echo "[$counter] $p"
       ((counter++))
     done <$HOME/.config/psh/dir
-  fi
-}
-
-function bl {
-  if (( $# > 0 )); then
-    bash -c "echo $1 > /sys/class/backlight/intel_backlight/brightness"
-  else
-    cat /sys/class/backlight/intel_backlight/actual_brightness
   fi
 }
 
@@ -272,6 +265,20 @@ function sudo {
   fi
 }
 
+function bl {
+  if (( $# > 0 )); then
+    output=$(stat -c "%a" /sys/class/backlight/intel_backlight/brightness)
+    if [ "$output" = "666" ]; then
+      echo $1 > /sys/class/backlight/intel_backlight/brightness
+    else
+      sudo chmod 666 /sys/class/backlight/intel_backlight/brightness
+      echo $1 > /sys/class/backlight/intel_backlight/brightness
+    fi
+  else
+    cat /sys/class/backlight/intel_backlight/actual_brightness
+  fi
+}
+
 function shweep {
   if [[ -f "$HOME/skps/cleanup.sh" ]]; then
     source $HOME/skps/cleanup.sh
@@ -281,6 +288,8 @@ function shweep {
   fi
   shutdown now
 }
+
+alias weather='curl wttr.in'
 
 # old volume controls when knob isn't available
 #alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
