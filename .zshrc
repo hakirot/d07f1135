@@ -14,7 +14,7 @@ function hakirotsend () {
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fwalch"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -144,7 +144,7 @@ alias passport='sudo mount /dev/sdc1 /mnt/passport'
 # TODO add skps to path
 
 alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
-alias screenkey='screenkey --window -s small --font-color "#a3361f"'
+alias screenkey='screenkey --window -s small --font-color "#c7adbd"'
 
 alias la='ls -A'
 alias ll='ls -l'
@@ -159,6 +159,7 @@ alias dox='cd ~/dox'
 alias gits='cd ~/git'
 alias lib='cd ~/lib'
 alias pix='cd ~/pix'
+alias mzk='cd ~/mzk'
 alias skps='cd ~/skps'
 alias gits='cd ~/git'
 alias config='cd ~/.config'
@@ -265,6 +266,7 @@ function sudo {
   fi
 }
 
+# faster backlight adjustments
 function bl {
   if (( $# > 0 )); then
     output=$(stat -c "%a" /sys/class/backlight/intel_backlight/brightness)
@@ -309,7 +311,10 @@ alias gdh='git diff HEAD'
 alias gdhh='git diff HEAD~1..HEAD'
 alias gdmh='git diff main..HEAD'
 
-# if running DWM
+# Screens
+#xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
+
+# Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
@@ -327,6 +332,3 @@ else
     $HOME/git/title-sara/sara
   fi
 fi
-
-# Screens
-#xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1

@@ -35,6 +35,7 @@ fi
 ~/.local/bin/newlook &
 #xcompmgr &
 picom --config ~/.config/picom.conf &
+dunst &
 xset dpms 0 0 0
 xset s 0 0
 exec dwm
