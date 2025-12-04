@@ -234,6 +234,7 @@ alias s="grep -riIn --exclude-dir node_modules --exclude-dir target"
 alias e="env | sort"
 alias g="git status -s"
 alias gs="git status"
+alias gdh="git diff HEAD"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
