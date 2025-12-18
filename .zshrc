@@ -307,8 +307,6 @@ alias vimall="/usr/bin/nvim -p ./*"
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gl='git log --all --decorate --graph --oneline'
 alias gp='git push'
-alias gdmh='git diff main..HEAD'
-alias gdh='git diff HEAD'
 alias gdhh='git diff HEAD~1..HEAD'
 alias gdmh='git diff main..HEAD'
 

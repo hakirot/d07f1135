@@ -2,14 +2,17 @@
 
 set nocompatible	
 syntax enable
-filetype plugin on
-filetype off
+"filetype plugin on
+"filetype off
 filetype plugin indent on
 
 call plug#begin()
 
 " https://github.com/rstacruz/sparkup
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" lightline status bar
+Plug 'itchyny/lightline.vim'
 
 " Yes.
 "Plug 'morhetz/gruvbox'
@@ -50,7 +53,12 @@ highlight TabLine ctermfg=green ctermbg=black guifg=#e67e80 guibg=#2d353b
 highlight TabLineFill ctermfg=black ctermbg=black guifg=#ffffff guibg=#2d353b
 " ACTIVE tab color / text
 highlight TabLineSel ctermfg=black ctermbg=green guifg=#2d353b guibg=#e67e80
-"
+
+hi Type ctermfg=blue guifg=blue
+
+" Lightline
+set laststatus=2
+
 " Change the highlight search colors
 highlight Search ctermfg=black guifg=#d3c6aa
 highlight Search ctermbg=cyan guibg=#543a48
@@ -134,7 +142,7 @@ let mapleader = " "
 
 " Enable Sparkup in .ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
-
+nnoremap <leader><leader> :Ex<CR>
 
 " - - - - - - - - - SNIPPITS - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " extract C code skeleton for speedier writes
@@ -142,3 +150,51 @@ au BufNewFile,BufRead *.ejs set filetype=html
 "nnoremap <leader>usage :-1read /home/hakirot/Documents/snippits/usage.c<Enter>jf[l
 "nnoremap <leader>html :-1read /home/hakirot/Documents/snippits/skeleton.html<Enter>4jf>a
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function! NetrwOpenMultiTab(current_line,...) range
+    " Get the number of lines
+    let n_lines = a:lastline - a:firstline + 1
+
+    " This is the command to be built up
+    let command = "normal "
+
+    " Iterator
+    let i = 1
+
+    " Virtually iterate over each line and build the command
+    while i < n_lines
+        let command .= "tgT:" . ( a:firstline + i ) . "\<CR>:+tabmove\<CR>"
+        let i += 1
+    endwhile
+    let command .= "tgT"
+
+    " Restore the Explore tab position
+    if i != 1
+        let command .= ":tabmove -" . ( n_lines - 1 ) . "\<CR>"
+    endif
+
+    " Restore the previous cursor line
+    let command .= ":" . a:current_line . "\<CR>"
+
+    " Check function arguments
+    if a:0 > 0
+        if a:1 > 0 ** a:1 <= n_lines
+            " The current tab is for the nth file
+            let command .= ( tabpagenr() + a:1 ) . "gt"
+        else
+            " The current tab is for the last selected file
+            let command .= (tabpagenr() + n_lines) . "gt"
+        endif
+    endif
+    " The current tab is for the Explore tab by default
+
+    " Execute the custom command
+    execute command
+endfunction
+
+" Define mappings
+augroup NetrwOpenMultiTabGroup
+    autocmd!
+    autocmd Filetype netrw vnoremap <buffer> <silent> <expr> t ":call NetrwOpenMultiTab(" . line(".") . "," . "v:count)\<CR>"
+    autocmd Filetype netrw vnoremap <buffer> <silent> <expr> T ":call NetrwOpenMultiTab(" . line(".") . "," . (( v:count == 0) ? '' : v:count) . ")\<CR>"
+augroup end
