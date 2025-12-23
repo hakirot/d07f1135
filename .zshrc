@@ -186,11 +186,11 @@ function pshd {
       while read p; do
         echo "[$counter] $p"
         ((counter++))
-      done <$HOME/.config/psh/dir
+      done <$HOME/.config/pshd/dir
     elif [ "$1" = "--" ]; then
-      cd $(head -n 1 $HOME/.config/psh/dir)
+      cd $(head -n 1 $HOME/.config/pshd/dir)
     elif [ "$1" = "-e" ]; then
-      nvim $HOME/.config/psh/dir
+      nvim $HOME/.config/pshd/dir
     elif [[ $1 =~ $re ]] ; then
       counter=0
       while read dir; do
@@ -198,14 +198,13 @@ function pshd {
           cd "$dir"
         fi
         ((counter++))
-      done <$HOME/.config/psh/dir
+      done <$HOME/.config/pshd/dir
     elif [[ $1 =~ "-p" ]] ; then
-      echo $PWD | cat - $HOME/.config/psh/dir > $HOME/.config/psh/temp
-      mv $HOME/.config/psh/temp $HOME/.config/psh/dir
-      awk '!seen[$0]++' $HOME/.config/psh/dir > $HOME/.config/psh/temp
-      mv $HOME/.config/psh/temp $HOME/.config/psh/dir
-      head -n 10 $HOME/.config/psh/dir > $HOME/.config/psh/temp
-      mv $HOME/.config/psh/temp $HOME/.config/psh/dir
+      echo $PWD >> $HOME/.config/pshd/dir
+      awk '!seen[$0]++' $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
+      mv $HOME/.config/pshd/temp $HOME/.config/pshd/dir
+      head -n 10 $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
+      mv $HOME/.config/pshd/temp $HOME/.config/pshd/dir
     else
       echo "no-op"
     fi
@@ -214,7 +213,7 @@ function pshd {
     while read p; do
       echo "[$counter] $p"
       ((counter++))
-    done <$HOME/.config/psh/dir
+    done <$HOME/.config/pshd/dir
   fi
 }
 
