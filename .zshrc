@@ -167,8 +167,6 @@ alias site="cd ~/git/site"
 alias rusties="cd ~/git/rust-book/projects"
 alias suckless="cd ~/git/suckless-hakirot"
 
-alias notes='cd ~/dox/.notes'
-
 alias backupConfs='~/git/backup-configs/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
