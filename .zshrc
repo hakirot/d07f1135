@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -132,18 +131,6 @@ setopt NO_NOTIFY
 RED='\e[31m'
 RESET='\e[0m'
 
-
-# Please add these doodads to PATH
-alias newlook=~/.local/bin/newlook
-alias dynamake=~/.local/bin/dynamake
-alias gitty=~/.local/bin/gitty
-alias colortest=~/.local/bin/colortest
-alias sara="cd ~/git/title-sara/"
-alias saran="echo \"fastfetch\nfor i in {1..23}\ndo\necho\ndone\" | /usr/bin/bash"
-alias passport='sudo mount /dev/sdc1 /mnt/passport'
-# TODO add skps to path
-
-alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 alias screenkey='screenkey --window -s small --font-color "#c7adbd"'
 
 alias la='ls -A'
@@ -171,7 +158,6 @@ alias backupConfs='~/git/backup-configs/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
-alias walls="cd /home/hakirot/pix/wall/"
 alias pingg="ping 8.8.8.8"
 alias xc="xcolor"
 
@@ -315,7 +301,7 @@ if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-    $HOME/git/title-sara/sara
+    $HOME/git/title-sara/sara -r
   # if no tmux please start tmux
   else
     tmux
@@ -323,8 +309,8 @@ if [[ ! -z $(pgrep dwm) ]]; then
 else
   if [ "$TERM" = "linux" ] ; then
     wal --theme custom-sara_white
-    $HOME/git/title-sara/sara
+    $HOME/git/title-sara/sara -r
   elif [ "$TERM" = "tmux-256color" ] ; then
-    $HOME/git/title-sara/sara
+    $HOME/git/title-sara/sara -r
   fi
 fi
