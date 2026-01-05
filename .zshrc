@@ -160,6 +160,7 @@ alias startproxy='ssh -D 1337 -N -C node'
 #alias rmshare='rm -rf /tmp/networkshare/*'
 alias pingg="ping 8.8.8.8"
 alias xc="xcolor"
+alias passport='sudo mount /dev/sdc1 /mnt/passport'
 
 function pshd {
   if (( $# > 0 )); then
@@ -187,7 +188,7 @@ function pshd {
       echo $PWD >> $HOME/.config/pshd/dir
       awk '!seen[$0]++' $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
       mv $HOME/.config/pshd/temp $HOME/.config/pshd/dir
-      head -n 10 $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
+      head -n 19 $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
       mv $HOME/.config/pshd/temp $HOME/.config/pshd/dir
     else
       echo "no-op"
