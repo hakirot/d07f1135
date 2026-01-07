@@ -202,6 +202,17 @@ function pshd {
   fi
 }
 
+function dispatch {
+  if (( $# != 1 )); then
+    echo "no-op"
+  else
+    git diff "$1" > $1.diff
+    cp "$1" "$1.merge"
+  fi
+
+  rm -f "$1.diff"
+}
+
 alias screenshot="sleep 5 && mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias run="cargo run"
@@ -296,6 +307,10 @@ alias gdmh='git diff main..HEAD'
 
 # Screens
 #xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
+
+function saraexit {
+  cat $HOME/.cache/sara/saraexit
+}
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
