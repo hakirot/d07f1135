@@ -313,6 +313,7 @@ function saraexit {
   cat $HOME/.cache/sara/saraexit
   rm -f $HOME/.cache/sara/saraexit
 }
+alias SARA='$HOME/git/title-sara/sara -f white -b black -F ; cd "$(saraexit)"'
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
