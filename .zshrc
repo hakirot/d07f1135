@@ -333,3 +333,5 @@ else
     $HOME/git/title-sara/sara -r -F; cd "$(saraexit)"
   fi
 fi
+
+#pactl set-card-profile "alsa_card.pci-0000_00_1f.3" output:hdmi-stereo
