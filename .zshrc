@@ -154,7 +154,7 @@ alias site="cd ~/git/site"
 alias rusties="cd ~/git/rust-book/projects"
 alias suckless="cd ~/git/suckless-hakirot"
 
-alias bconfs='~/git/backup-configs/getConfs.py'
+alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
@@ -314,14 +314,14 @@ function saraexit {
   rm -f $HOME/.cache/sara/saraexit
 }
 
-alias SARA='$HOME/git/title-sara/sara -f blue -b red -F ; cd "$(saraexit)"'
+alias SARA='$HOME/git/title-sara/sara -f white -b black -F ; cd "$(saraexit)"'
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-  $HOME/git/title-sara/sara -f white -b red -F; cd "$(saraexit)"
+  $HOME/git/title-sara/sara -f white -b black -F; cd "$(saraexit)"
   # if no tmux please start tmux
   else
     tmux
@@ -329,8 +329,8 @@ if [[ ! -z $(pgrep dwm) ]]; then
 else
   if [ "$TERM" = "linux" ] ; then
     wal --theme custom-sara_white
-    $HOME/git/title-sara/sara -f white -b red -F; cd "$(saraexit)"
+    $HOME/git/title-sara/sara -f white -b black -F; cd "$(saraexit)"
   elif [ "$TERM" = "tmux-256color" ] ; then
-    $HOME/git/title-sara/sara -f white -b red -F; cd "$(saraexit)"
+    $HOME/git/title-sara/sara -f white -b black -F; cd "$(saraexit)"
   fi
 fi

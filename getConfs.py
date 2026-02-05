@@ -6,7 +6,7 @@ import time
 names = []
 written = []
 homeDir = '/home/hakirot/'
-backupsDir = '/home/hakirot/git/backup-configs/'
+backupsDir = '/home/hakirot/git/d07f1135/'
 
 backups = os.scandir(backupsDir)
 
