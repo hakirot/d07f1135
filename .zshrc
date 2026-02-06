@@ -314,14 +314,14 @@ function saraexit {
   rm -f $HOME/.cache/sara/saraexit
 }
 
-alias SARA='$HOME/git/title-sara/sara -f white -b black -F ; cd "$(saraexit)"'
+alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-  $HOME/git/title-sara/sara -f white -b black -F; cd "$(saraexit)"
+  $HOME/git/sara/sara -f white -b black -F; cd "$(saraexit)"
   # if no tmux please start tmux
   else
     tmux
@@ -329,8 +329,8 @@ if [[ ! -z $(pgrep dwm) ]]; then
 else
   if [ "$TERM" = "linux" ] ; then
     wal --theme custom-sara_white
-    $HOME/git/title-sara/sara -f white -b black -F; cd "$(saraexit)"
+    $HOME/git/sara/sara -f white -b black -F; cd "$(saraexit)"
   elif [ "$TERM" = "tmux-256color" ] ; then
-    $HOME/git/title-sara/sara -f white -b black -F; cd "$(saraexit)"
+    $HOME/git/sara/sara -f white -b black -F; cd "$(saraexit)"
   fi
 fi
