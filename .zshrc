@@ -140,7 +140,6 @@ alias sl='ls --color=tty'
 
 # nav
 alias dls='cd ~/dls'
-alias Dow='cd ~/Downloads'
 alias D='cd ~/Downloads'
 alias dox='cd ~/dox'
 alias gits='cd ~/git'
@@ -321,16 +320,13 @@ if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-  $HOME/git/sara/sara -f white -b black -F; cd "$(saraexit)"
+  SARA
   # if no tmux please start tmux
   else
     tmux
   fi
 else
-  if [ "$TERM" = "linux" ] ; then
-    wal --theme custom-sara_white
-    $HOME/git/sara/sara -f white -b black -F; cd "$(saraexit)"
-  elif [ "$TERM" = "tmux-256color" ] ; then
-    $HOME/git/sara/sara -f white -b black -F; cd "$(saraexit)"
+  if [ "$TERM" = "tmux-256color" ] ; then
+    SARA
   fi
 fi
