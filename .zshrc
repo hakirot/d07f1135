@@ -313,9 +313,9 @@ function saraexit {
   rm -f $HOME/.cache/sara/saraexit
 }
 
-alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
-
 source ~/.dircolors
+
+alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then

@@ -33,20 +33,20 @@ obj.close()
 
 if len(written) > 0:
     for entry in written:
-        print("\033[1;34mCopied " + entry + " to " + backupsDir + "\033[m")
-    push = input("\033[1;35mCommit and Push? [y/N]\033[m\n")
+        print("\033[0;34mCopied " + entry + " to " + backupsDir + "\033[m")
+    push = input("\033[0;35mCommit and Push? [y/N]\033[m\n")
     if push == 'Y' or push == 'y':
 
-        commitMsg = input('\033[1;35mEnter Commit Msg:\033[1;33m ')
-        print('\033[1;35m')
-        print('pushing...\033[1;34m')
+        commitMsg = input('\033[0;35mEnter Commit Msg:\033[1;33m ')
+        print('\033[0;35m')
+        print('pushing...\033[0;34m')
 
         # https://stackoverflow.com/questions/29106339/when-attempting-run-a-python-script-from-within-another-python-script-i-get-pe
         gitScript = backupsDir + "gitConfs.sh"
         os.system('{} {} '.format('/bin/sh', gitScript) + commitMsg)
         print('\033[m')
-#       print('\033[1;35mDone.\033[m')
+#       print('\033[0;35mDone.\033[m')
     else:
-        print('\033[1;35mExited.\033[m')
+        print('\033[0;35mExited.\033[m')
 else:
-    print('\033[1;35mNothing to do.\033[m')
+    print('\033[0;35mNothing to do.\033[m')
