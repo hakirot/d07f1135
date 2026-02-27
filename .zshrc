@@ -315,12 +315,14 @@ function saraexit {
 
 alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
 
+source ~/.dircolors
+
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-  SARA
+    SARA
   # if no tmux please start tmux
   else
     tmux
