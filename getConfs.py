@@ -37,7 +37,7 @@ if len(written) > 0:
     push = input("\033[0;35mCommit and Push? [y/N]\033[m\n")
     if push == 'Y' or push == 'y':
 
-        commitMsg = input('\033[0;35mEnter Commit Msg:\033[1;33m ')
+        commitMsg = input('\033[0;35mEnter Commit Msg:\033[0;33m ')
         print('\033[0;35m')
         print('pushing...\033[0;34m')
 
