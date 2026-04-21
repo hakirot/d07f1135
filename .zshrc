@@ -1,4 +1,3 @@
-export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -103,15 +102,12 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconf="source ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #source /home/hakirot/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #bindkey -v
 bindkey "^R" history-incremental-search-backward
 
-# History
 #export HISTFILE=$ZDOTDIR/.host_zsh
 export HISTFILE=$HOME/.host_zsh
 export HISTSIZE=5000000
@@ -126,17 +122,21 @@ setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 setopt NO_NOTIFY
 
-# END HISTORY
-
 RED='\e[31m'
 RESET='\e[0m'
+
+#path=(~/.local/bin $path)
+export PATH=$HOME/.local/bin:$PATH
+typeset -U path
 
 alias screenkey='screenkey --window -s small --font-color "#c7adbd"'
 
 alias la='ls -A'
 alias ll='ls -l'
+alias lla='ls -la'
 alias l='ls -1'
 alias sl='ls --color=tty'
+alias lld='ls -l --color=tty /dev/disk/by-id/'
 
 # nav
 alias dls='cd ~/dls'
@@ -145,6 +145,7 @@ alias dox='cd ~/dox'
 alias gits='cd ~/git'
 alias lib='cd ~/lib'
 alias pix='cd ~/pix'
+alias vidz='cd ~/vidz'
 alias mzk='cd ~/mzk'
 alias skps='cd ~/skps'
 alias gmz='cd ~/gmz'
@@ -155,9 +156,9 @@ alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
-alias pingg="ping 8.8.8.8"
+alias pingg="ping 9.9.9.9"
 alias xc="xcolor"
-alias passport='sudo mount /dev/sdc1 /mnt/passport'
+alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 function pshd {
   if (( $# > 0 )); then
@@ -221,7 +222,7 @@ alias cr="cargo run"
 alias dc="cd"
 
 # wider
-alias rsync='rsync -r --progress'
+#alias rsync='rsync -r --progress'
 alias bat='bat --theme base16-256'
 
 # oneshots
@@ -313,7 +314,9 @@ function saraexit {
 
 source ~/.dircolors
 
-alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
+#alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
+alias SARA='$HOME/git/sara/sara -f white -b cyan -F ; cd "$(saraexit)"'
+#alias SARA='$HOME/git/sara/sara -r -F ; cd "$(saraexit)"'
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
