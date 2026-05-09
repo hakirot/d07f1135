@@ -150,7 +150,6 @@ alias mzk='cd ~/mzk'
 alias skps='cd ~/skps'
 alias gmz='cd ~/gmz'
 alias rusties="cd ~/git/rust-book/projects"
-alias suckless="cd ~/git/suckless-hakirot"
 
 alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
@@ -236,6 +235,7 @@ alias gs="git status"
 alias gdh="git diff HEAD"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
+alias todo="cat * | grep -rin TODO --exclude-dir .git --color"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
 alias m='tmatrix -c default -t SARA --no-fade -s 10'
@@ -288,10 +288,6 @@ function shweep {
 
 alias weather='curl wttr.in'
 
-# old volume controls when knob isn't available
-#alias v="pactl set-sink-volume @DEFAULT_SINK@ +5%"
-#alias vd="pactl set-sink-volume @DEFAULT_SINK@ -5%"
-
 alias v="nvim"
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
@@ -314,9 +310,7 @@ function saraexit {
 
 source ~/.dircolors
 
-#alias SARA='$HOME/git/sara/sara -f white -b black -F ; cd "$(saraexit)"'
-alias SARA='$HOME/git/sara/sara -f white -b cyan -F ; cd "$(saraexit)"'
-#alias SARA='$HOME/git/sara/sara -r -F ; cd "$(saraexit)"'
+alias SARA='sara ; cd "$(saraexit)"'
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
