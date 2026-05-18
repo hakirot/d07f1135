@@ -168,11 +168,11 @@ function pshd {
       while read p; do
         echo "[$counter] $p"
         ((counter++))
-      done <$HOME/.config/pshd/dir
+      done <$HOME/.config/sara/dir
     elif [ "$1" = "--" ]; then
-      cd $(head -n 1 $HOME/.config/pshd/dir)
+      cd $(head -n 1 $HOME/.config/sara/dir)
     elif [ "$1" = "-e" ]; then
-      nvim $HOME/.config/pshd/dir
+      nvim $HOME/.config/sara/dir
     elif [[ $1 =~ $re ]] ; then
       counter=0
       while read dir; do
@@ -180,13 +180,13 @@ function pshd {
           cd "$dir"
         fi
         ((counter++))
-      done <$HOME/.config/pshd/dir
+      done <$HOME/.config/sara/dir
     elif [[ $1 =~ "-p" ]] ; then
-      echo $PWD >> $HOME/.config/pshd/dir
-      awk '!seen[$0]++' $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
-      mv $HOME/.config/pshd/temp $HOME/.config/pshd/dir
-      head -n 19 $HOME/.config/pshd/dir > $HOME/.config/pshd/temp
-      mv $HOME/.config/pshd/temp $HOME/.config/pshd/dir
+      echo $PWD >> $HOME/.config/sara/dir
+      awk '!seen[$0]++' $HOME/.config/sara/dir > $HOME/.config/sara/temp
+      mv $HOME/.config/sara/temp $HOME/.config/sara/dir
+      head -n 19 $HOME/.config/sara/dir > $HOME/.config/sara/temp
+      mv $HOME/.config/sara/temp $HOME/.config/sara/dir
     else
       echo "no-op"
     fi
@@ -195,7 +195,7 @@ function pshd {
     while read p; do
       echo "[$counter] $p"
       ((counter++))
-    done <$HOME/.config/pshd/dir
+    done <$HOME/.config/sara/dir
   fi
 }
 
@@ -308,9 +308,9 @@ function saraexit {
   rm -f $HOME/.cache/sara/saraexit
 }
 
-source ~/.dircolors
-
 alias SARA='sara ; cd "$(saraexit)"'
+
+source ~/.dircolors
 
 # Lastly, launch tmux/SARA
 if [[ ! -z $(pgrep dwm) ]]; then
