@@ -149,10 +149,12 @@ alias vidz='cd ~/vidz'
 alias mzk='cd ~/mzk'
 alias skps='cd ~/skps'
 alias gmz='cd ~/gmz'
+alias vidz='cd ~/vidz'
 alias rusties="cd ~/git/rust-book/projects"
 
 alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
+alias proxy2='ssh -D 2779 -N -C gabagool'
 #alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
 #alias rmshare='rm -rf /tmp/networkshare/*'
 alias pingg="ping 9.9.9.9"
@@ -185,7 +187,7 @@ function pshd {
       echo $PWD >> $HOME/.config/sara/dir
       awk '!seen[$0]++' $HOME/.config/sara/dir > $HOME/.config/sara/temp
       mv $HOME/.config/sara/temp $HOME/.config/sara/dir
-      head -n 19 $HOME/.config/sara/dir > $HOME/.config/sara/temp
+      head -n 100 $HOME/.config/sara/dir > $HOME/.config/sara/temp
       mv $HOME/.config/sara/temp $HOME/.config/sara/dir
     else
       echo "no-op"
