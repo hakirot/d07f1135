@@ -2,10 +2,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-function hakirotsend () {
-  echo "sending $1 to HAKIROT"
+function roesend () {
+  echo "sending $1 to ROE"
   sleep 1
-  rsync -r --progress $1 hakirot@192.168.0.103:/home/hakirot/Downloads
+  rsync -r --progress $1 roe@192.168.0.103:/home/roe/Downloads
 }
 
 # Set name of the theme to load --- if set to "random", it will
@@ -103,7 +103,7 @@ export EDITOR='nvim'
 #
 # Example aliases
 
-#source /home/hakirot/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /home/roe/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #bindkey -v
 bindkey "^R" history-incremental-search-backward
@@ -129,7 +129,7 @@ RESET='\e[0m'
 export PATH=$HOME/.local/bin:$PATH
 typeset -U path
 
-alias screenkey='screenkey --window -s small --font-color "#c7adbd"'
+#alias screenkey='screenkey --window -s small --font-color "#c7adbd"'
 
 alias la='ls -A'
 alias ll='ls -l'
@@ -170,25 +170,25 @@ function pshd {
       while read p; do
         echo "[$counter] $p"
         ((counter++))
-      done <$HOME/.config/sara/dir
+      done <$HOME/.config/sara/pshd
     elif [ "$1" = "--" ]; then
-      cd $(head -n 1 $HOME/.config/sara/dir)
+      cd $(head -n 1 $HOME/.config/sara/pshd)
     elif [ "$1" = "-e" ]; then
-      nvim $HOME/.config/sara/dir
+      nvim $HOME/.config/sara/pshd
     elif [[ $1 =~ $re ]] ; then
       counter=0
-      while read dir; do
+      while read pshd; do
         if [[ counter -eq $1 ]] ; then
-          cd "$dir"
+          cd "$pshd"
         fi
         ((counter++))
-      done <$HOME/.config/sara/dir
+      done <$HOME/.config/sara/pshd
     elif [[ $1 =~ "-p" ]] ; then
-      echo $PWD >> $HOME/.config/sara/dir
-      awk '!seen[$0]++' $HOME/.config/sara/dir > $HOME/.config/sara/temp
-      mv $HOME/.config/sara/temp $HOME/.config/sara/dir
-      head -n 100 $HOME/.config/sara/dir > $HOME/.config/sara/temp
-      mv $HOME/.config/sara/temp $HOME/.config/sara/dir
+      echo $PWD >> $HOME/.config/sara/pshd
+      awk '!seen[$0]++' $HOME/.config/sara/pshd > $HOME/.config/sara/temp
+      mv $HOME/.config/sara/temp $HOME/.config/sara/pshd
+      head -n 100 $HOME/.config/sara/pshd > $HOME/.config/sara/temp
+      mv $HOME/.config/sara/temp $HOME/.config/sara/pshd
     else
       echo "no-op"
     fi
@@ -197,7 +197,7 @@ function pshd {
     while read p; do
       echo "[$counter] $p"
       ((counter++))
-    done <$HOME/.config/sara/dir
+    done <$HOME/.config/sara/pshd
   fi
 }
 
@@ -214,9 +214,6 @@ function dispatch {
 
 alias screenshot="sleep 5 && mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
-alias run="cargo run"
-# tmatrix-git
-alias matrix='tmatrix -c default -t SARA --no-fade -s 20'
 alias cr="cargo run"
 
 # fatfinger
@@ -243,6 +240,10 @@ alias todo="cat * | grep -rin TODO --exclude-dir .git --color"
 alias m='tmatrix -c default -t SARA --no-fade -s 10'
 alias t='tree -I target -I node_modules'
 alias p='pshd'
+
+function search {
+  git log -S"$1" --all -p -- | grep "$1" | nvim
+}
 
 # fast find
 function f {
@@ -297,24 +298,22 @@ alias vimall="/usr/bin/nvim -p ./*"
 
 # nav to git project root
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
-alias gl='git log --all --decorate --graph --oneline'
-alias gp='git push'
 alias gdhh='git diff HEAD~1..HEAD'
 alias gdmh='git diff main..HEAD'
 
 # Screens
 #xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
 
-function saraexit {
+function sara_jump {
   cat $HOME/.cache/sara/saraexit
   rm -f $HOME/.cache/sara/saraexit
 }
 
-alias SARA='sara ; cd "$(saraexit)"'
+alias SARA='sara ; cd "$(sara_jump)"'
 
 source ~/.dircolors
 
-# Lastly, launch tmux/SARA
+# lastly, launch tmux/sara
 if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then

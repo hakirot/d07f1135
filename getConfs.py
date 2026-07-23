@@ -5,8 +5,8 @@ import time
 
 names = []
 written = []
-homeDir = '/home/hakirot/'
-backupsDir = '/home/hakirot/git/d07f1135/'
+homeDir = '/home/roe/'
+backupsDir = '/home/roe/git/d07f1135/'
 
 backups = os.scandir(backupsDir)
 
