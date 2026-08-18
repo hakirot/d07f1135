@@ -237,7 +237,7 @@ alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
 alias todo="cat * | grep -rin TODO --exclude-dir .git --color"
 #alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
 #alias p='$HOME/.config/polybar/bar.sh'
-alias m='tmatrix -c default -t SARA --no-fade -s 10'
+alias m='tmatrix -c default -t sara --no-fade -s 10'
 alias t='tree -I target -I node_modules'
 alias p='pshd'
 
@@ -309,7 +309,7 @@ function sara_jump {
   rm -f $HOME/.cache/sara/saraexit
 }
 
-alias SARA='sara ; cd "$(sara_jump)"'
+alias sara='sara ; cd "$(sara_jump)"'
 
 source ~/.dircolors
 
@@ -318,13 +318,13 @@ if [[ ! -z $(pgrep dwm) ]]; then
   # if tmux run sara
   if { [ "$TERM" = "tmux-256color" ] && [ ! -z ${TMUX+x} ] ; } then
   # Optional
-    SARA
+    sara
   # if no tmux please start tmux
   else
     tmux
   fi
 else
   if [ "$TERM" = "tmux-256color" ] ; then
-    SARA
+    sara
   fi
 fi

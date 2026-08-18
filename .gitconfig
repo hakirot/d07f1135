@@ -20,3 +20,5 @@
   p = push
   s = status -s
   st = status
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials
