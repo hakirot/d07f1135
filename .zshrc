@@ -2,12 +2,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-function roesend () {
-  echo "sending $1 to ROE"
-  sleep 1
-  rsync -r --progress $1 roe@192.168.0.103:/home/roe/Downloads
-}
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -122,9 +116,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 setopt NO_NOTIFY
 
-RED='\e[31m'
-RESET='\e[0m'
-
 #path=(~/.local/bin $path)
 export PATH=$HOME/.local/bin:$PATH
 typeset -U path
@@ -150,16 +141,12 @@ alias mzk='cd ~/mzk'
 alias skps='cd ~/skps'
 alias gmz='cd ~/gmz'
 alias vidz='cd ~/vidz'
-alias rusties="cd ~/git/rust-book/projects"
 
 alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 alias proxy2='ssh -D 2779 -N -C gabagool'
-#alias startshare='mkdir /tmp/networkshare; chmod 777 /tmp/networkshare; ~/.local/bin/remount.sh'
-#alias rmshare='rm -rf /tmp/networkshare/*'
 alias pingg="ping 9.9.9.9"
 alias xc="xcolor"
-alias passport='sudo mount /dev/sda1 /mnt/passport'
 
 function pshd {
   if (( $# > 0 )); then
@@ -220,7 +207,6 @@ alias cr="cargo run"
 alias dc="cd"
 
 # wider
-#alias rsync='rsync -r --progress'
 alias bat='bat --theme base16-256'
 
 # oneshots
@@ -235,8 +221,6 @@ alias gdh="git diff HEAD"
 alias b="bluetoothctl connect AC:80:0A:19:89:A8"
 alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
 alias todo="cat * | grep -rin TODO --exclude-dir .git --color"
-#alias t='vim ~/dox/notes2/tasks' # AKA alias tasks
-#alias p='$HOME/.config/polybar/bar.sh'
 alias m='tmatrix -c default -t sara --no-fade -s 10'
 alias t='tree -I target -I node_modules'
 alias p='pshd'
@@ -300,9 +284,6 @@ alias vimall="/usr/bin/nvim -p ./*"
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gdhh='git diff HEAD~1..HEAD'
 alias gdmh='git diff main..HEAD'
-
-# Screens
-#xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1 --mode 2560x1440 --right-of DP-1
 
 function sara_jump {
   cat $HOME/.cache/sara/saraexit
