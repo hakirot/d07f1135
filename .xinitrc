@@ -32,12 +32,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-~/.local/bin/newlook &
+~/.local/bin/reskin &
 #xcompmgr &
 picom --config ~/.config/picom.conf &
 dunst &
 xset dpms 0 0 0
 xset s 0 0
 nohup bash -c "sleep 3; xdotool key super+space" 2>&1 >/dev/null &
-nohup bash -c "sleep 3; notify-send \"Welcome\" \"${USER}\" 2>&1 >/dev/null &
+nohup bash -c "sleep 3; notify-send \"Welcome\" \"${USER}\"" 2>&1 >/dev/null &
 exec dwm
