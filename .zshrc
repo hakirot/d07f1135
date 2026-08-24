@@ -126,7 +126,6 @@ alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -la'
 alias l='ls -1'
-alias sl='ls --color=tty'
 alias lld='ls -l --color=tty /dev/disk/by-id/'
 
 # nav
@@ -203,8 +202,9 @@ alias screenshot="sleep 5 && mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/s
 alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
 alias cr="cargo run"
 
-# fatfinger
+# common fatfingers
 alias dc="cd"
+alias sl='ls --color=tty'
 
 # wider
 alias bat='bat --theme base16-256'
@@ -223,6 +223,7 @@ alias bd="bluetoothctl disconnect AC:80:0A:19:89:A8"
 alias todo="cat * | grep -rin TODO --exclude-dir .git --color"
 alias m='tmatrix -c default -t sara --no-fade -s 10'
 alias t='tree -I target -I node_modules'
+alias tv='tree -I target -I node_modules | v'
 alias p='pshd'
 
 function search {
