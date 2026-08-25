@@ -138,6 +138,7 @@ alias pix='cd ~/pix'
 alias vidz='cd ~/vidz'
 alias mzk='cd ~/mzk'
 alias skps='cd ~/skps'
+alias scrmp='cd ~/scrmp'
 alias gmz='cd ~/gmz'
 alias vidz='cd ~/vidz'
 
@@ -239,7 +240,7 @@ function pw {
   gpg --symmetric --output $HOME/.config/pw.gpg # [enter] then ^D to quit
 }
 
-export SUDO_ASKPASS=$HOME/skps/secret.sh
+export SUDO_ASKPASS=$HOME/skps/sudo_askpass
 # sudo password storage
 function sudo {
   if [[ -f "$HOME/.config/pw.gpg" ]]; then
@@ -280,6 +281,9 @@ alias v="nvim"
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
 alias vimall="/usr/bin/nvim -p ./*"
+function vopen {
+  nvim $(which $1)
+}
 
 # nav to git project root
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
