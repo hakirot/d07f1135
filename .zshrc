@@ -145,8 +145,6 @@ alias vidz='cd ~/vidz'
 alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 alias proxy2='ssh -D 2779 -N -C gabagool'
-alias pingg="ping 9.9.9.9"
-alias xc="xcolor"
 
 function pshd {
   if (( $# > 0 )); then
@@ -200,8 +198,6 @@ function dispatch {
 }
 
 alias screenshot="sleep 5 && mkdir -p $HOME/pix/screenshots && scrot $HOME/pix/screenshots/%m-%d-%Y-%H%M%S.png"
-alias clock="while :; do date +%I:%M | figlet -f pepper; sleep 5; sleep 1; done"
-alias cr="cargo run"
 
 # common fatfingers
 alias dc="cd"
