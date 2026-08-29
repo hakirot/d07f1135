@@ -276,7 +276,7 @@ alias weather='curl wttr.in'
 alias v="nvim"
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
-alias vimall="/usr/bin/nvim -p ./*"
+alias va="/usr/bin/nvim -p ./*"
 function vpn {
   nvim $(which $1)
 }
