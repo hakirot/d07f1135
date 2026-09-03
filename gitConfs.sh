@@ -5,10 +5,10 @@ cd "$(dirname "$0")"
 git add -A
 
 # Use all arguments for git commit msg
-str="'$*'"
-gitCmd="git commit -m ${str}"
+args="'$*'"
+gitCmd="git commit -m ${args}"
 
-# Run gitCmd as shellcode for ${str}
+# Run gitCmd as shellcode for ${args}
 eval "$gitCmd"
 
 # Generate push command
