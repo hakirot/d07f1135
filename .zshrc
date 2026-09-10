@@ -227,7 +227,7 @@ function search {
   git log -S"$1" --all -p -- | grep "$1" | nvim
 }
 
-# fast find
+# qwik find
 function f {
   find . -iname "*$1*"
 }
@@ -291,7 +291,9 @@ function sara_jump {
   rm -f $HOME/.cache/sara/saraexit
 }
 
-alias sara='sara ; cd "$(sara_jump)"'
+function sara() {
+  command sara $@ ; cd "$(sara_jump)"
+}
 
 source ~/.dircolors
 
