@@ -126,6 +126,7 @@ alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -la'
 alias l='ls -1'
+alias lt='ls -1t'
 alias lld='ls -l --color=tty /dev/disk/by-id/'
 
 # nav
