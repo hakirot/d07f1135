@@ -146,6 +146,7 @@ alias vidz='cd ~/vidz'
 alias bconfs='~/git/d07f1135/getConfs.py'
 alias startproxy='ssh -D 1337 -N -C node'
 alias proxy2='ssh -D 2779 -N -C gabagool'
+alias pwdd="pwd | tr -d '\n' | xsel -ib"
 
 function pshd {
   if (( $# > 0 )); then
