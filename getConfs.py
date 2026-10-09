@@ -2,6 +2,7 @@
 import os
 import stat
 import time
+import subprocess
 
 names = []
 written = []
@@ -26,9 +27,12 @@ for entry in obj:
         if(modTime != backupTime):
             rmCmd = "rm " + backupsDir + entry.name
             cpCmd = "cp -p " + homeDir + entry.name + " " + backupsDir
-            os.system(rmCmd)
-            os.system(cpCmd)
+#           os.system(rmCmd)
+#           os.system(cpCmd)
+            _ = subprocess.run(rmCmd)
+            _ = subprocess.run(cpCmd)
             written.append(entry.name)
+
 obj.close()
 
 if len(written) > 0:
