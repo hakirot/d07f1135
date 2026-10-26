@@ -25,12 +25,17 @@ for entry in obj:
         backupTime = time.ctime(fileStat [ stat.ST_MTIME ])
 
         if(modTime != backupTime):
-            rmCmd = "rm " + backupsDir + entry.name
-            cpCmd = "cp -p " + homeDir + entry.name + " " + backupsDir
+#           rmCmd = "rm " + backupsDir + entry.name
+#           cpCmd = "cp -p " + homeDir + entry.name + " " + backupsDir
 #           os.system(rmCmd)
 #           os.system(cpCmd)
-            _ = subprocess.run(["rm", backupsDir, entry.name])
-            _ = subprocess.run(["cp", "-p", homeDir, entry.name, backupsDir])
+            target = backupsDir + entry.name
+            _ = subprocess.run(["rm", target])
+            print(target)
+            target = homeDir + entry.name
+            _ = subprocess.run(["cp", "-p", target, backupsDir])
+#           print("cp" + "-p" + homeDir + entry.name + backupsDir)
+            exit();
             written.append(entry.name)
 
 obj.close()
