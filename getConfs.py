@@ -29,8 +29,8 @@ for entry in obj:
             cpCmd = "cp -p " + homeDir + entry.name + " " + backupsDir
 #           os.system(rmCmd)
 #           os.system(cpCmd)
-            _ = subprocess.run(rmCmd)
-            _ = subprocess.run(cpCmd)
+            _ = subprocess.run(["rm", backupsDir, entry.name])
+            _ = subprocess.run(["cp", "-p", homeDir, entry.name, backupsDir])
             written.append(entry.name)
 
 obj.close()

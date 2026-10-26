@@ -279,7 +279,7 @@ alias v="nvim"
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
 alias va="/usr/bin/nvim -p ./*"
-function vpn {
+function vpo {
   nvim $(which $1)
 }
 
